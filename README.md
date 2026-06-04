@@ -1,142 +1,34 @@
-# Arnoldo Alonso — Founder Profile
+# Arnoldo Alonso
 
-**Public Profile Site for Arnoldo Alonso**
+**Founder Architect · Combat Veteran · Data Scientist · Neurointelligent Systems Builder**
 
-Combat Veteran · Founder · Neurointelligent Systems Architect
+I am a U.S. Army combat veteran of Operation Iraqi Freedom and Operation New Dawn, former Webb County Deputy Sheriff, and founder of Brasidas Strategies. My work sits at the intersection of public systems, disability access, legal-medical evidence, and high-assurance technology.
 
-Brownsville, Texas — Rio Grande Valley
+I build neurointelligent systems for environments where failure matters: veterans’ benefits, accessibility, public-service infrastructure, and decision-support workflows. Ayala is my current focus: a veteran-centered platform designed to structure evidence, reduce friction, and make complex systems more accessible without replacing human judgment.
 
-**Live Site:** [alonsobrx.github.io/founder-architect](https://alonsobrx.github.io/founder-architect)
+This repository is a clean public profile and static founder site. It is built with plain HTML, CSS, and lightweight JavaScript, with accessibility, bilingual support, and screen-reader usability treated as first-order design requirements.
 
----
+## Live Site
 
-## About This Repository
+[alonsobrx.github.io/founder-architect](https://alonsobrx.github.io/founder-architect)
 
-This repository contains the public founder profile and biography site for Arnoldo Alonso. It is a static HTML site designed to function without JavaScript frameworks or external dependencies where possible.
+## Stack
 
-The site is built to the following accessibility standards:
-
-- WCAG 2.1 AA compliant
-- Screen reader optimized (tested with NVDA and VoiceOver)
-- Keyboard navigable throughout
-- High-contrast color scheme
-- Bilingual: English and Spanish throughout
-- No auto-playing media
-
----
-
-## About Arnoldo Alonso
-
-I am a combat-decorated United States Army veteran (Staff Sergeant, 13 years active service), a service-connected disabled veteran, a former Deputy Sheriff, and the founder of Brasidas Strategies.
-
-I build high-assurance AI and neurointelligent systems designed to serve disabled users, degraded environments, and communities historically excluded from advanced technology.
-
-**Core Work:**
-
-- **Ayala** — Patented neurointelligent claims-preparation engine for veterans and disabled users
-- **Neuromorphic Computing Research** — Spiking neural networks, offline edge AI, low-power architectures
-- **Accessibility Engineering** — Blind and low-vision user systems, WCAG 2.1 AA, bilingual interfaces
-- **Ethical Command Architecture** — Constraint-aligned AI for defense and governance applications
-
----
-
-## Site Structure
-
-| File | Purpose |
-|---|---|
-| `index.html` | Entry point — redirects to bio |
-| `bio.html` | Full biography and credentials |
-| `resume.html` | Professional experience and technical skills |
-| `publications.html` | Published research and reports |
-| `blog.html` | Articles and long-form writing |
-| `store.html` | Publications and resources |
-| `contact.html` | Contact information and accessible links |
-| `tools.html` | Research tools and resources |
-| `assets/` | Stylesheets, scripts, and static assets |
-| `reports/` | Downloadable report files |
-| `blog/` | Blog article files |
-
----
-
-## Technical Stack
-
-- Plain HTML5 with semantic markup
-- CSS3 — no external CSS framework dependencies for core layout
-- Vanilla JavaScript for language switching and navigation
-- Google Fonts (Roboto, Roboto Mono) loaded via preconnect for performance
-- Bilingual i18n implemented inline without a build step
-
----
-
-## Accessibility Commitment
-
-This site treats blind and low-vision users as primary stakeholders, not an edge case.
-
-Every page includes:
-
-- Proper `lang` attribute on the `html` element
-- Logical heading hierarchy (h1 → h2 → h3)
-- `aria-labelledby` on all major sections
-- Skip navigation support
-- Descriptive `alt` text on all images
-- No content conveyed by color alone
-- Focus indicators visible on all interactive elements
-- Bilingual content (English / Español) switchable without page reload
-
-**If you find an accessibility barrier, open an issue. It will be treated as a critical bug.**
-
----
-
-## Bilingual Support
-
-All user-facing content is available in English and Spanish. Language preference is stored in `localStorage` and persists across pages.
-
-The bilingual system uses inline `data-i18n` attributes and a plain JavaScript switcher. No build step required. No framework dependency.
-
----
-
-## Deployment
-
-This site is deployed via GitHub Pages from the `main` branch.
-
-To run locally:
-
-```bash
-# Clone the repository
-git clone https://github.com/alonsobrx/founder-architect.git
-
-# Navigate into the directory
-cd founder-architect
-
-# Serve locally (Python 3)
-python3 -m http.server 8080
-
-# Open in browser
-# http://localhost:8080
-```
-
-No build step. No package install. Open the HTML files directly or serve with any static file server.
-
----
+- HTML5
+- CSS3
+- Vanilla JavaScript
+- GitHub Pages
 
 ## Contact
 
-- **Telegram (Accessible):** [t.me/alonsobrx](https://t.me/alonsobrx)
-- **Email:** arnoldo@brasidasstrategies.com
-- **GitHub:** [github.com/alonsobrx](https://github.com/alonsobrx)
-
----
+- Telegram: [t.me/alonsobrx](https://t.me/alonsobrx)
+- Email: arnoldo@brasidasstrategies.com
+- GitHub: [github.com/alonsobrx](https://github.com/alonsobrx)
 
 ## License
 
-Content in this repository is the intellectual property of Arnoldo Alonso and Brasidas Strategies.
-
-The biography, resume, and personal narrative content are All Rights Reserved.
-
-The HTML and CSS structure may be referenced for educational purposes with attribution.
+All biographical, narrative, and strategic content is reserved by Arnoldo Alonso and Brasidas Strategies. Public code may be reviewed for educational reference with attribution.
 
 ---
 
-*Brasidas Strategies — Independent. Auditable. Accessible.*
-
-*Serving veterans, disabled users, and the Rio Grande Valley community.*
+**Independent. Accessible. Mission-built.**
