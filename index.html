@@ -1,570 +1,457 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The People's Brief — Arnoldo Alonso | Brasidas Strategies</title>
-  <meta name="description" content="Understanding and Evaluating Large-Scale Economic Incentive Proposals. An educational resource by Arnoldo Alonso, Brasidas Strategies.">
+  <title>Brasidas Strategies — Public Research &amp; Analysis</title>
+  <meta name="description" content="Independent public interest research by Arnoldo Alonso, Founder of Brasidas Strategies. Open-source intelligence for communities, veterans, and the public record.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400;1,700&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── Index-page overrides ── */
+    .index-hero {
+      background: #000;
+      color: #fff;
+      padding: 3.5rem 2rem 3rem;
+      border-bottom: 4px solid #000;
+    }
+    .index-hero-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .index-org {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 0.6rem;
+    }
+    .index-title {
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin: 0 0 0.75rem;
+    }
+    .index-subtitle {
+      font-size: 1rem;
+      font-weight: 300;
+      color: #ccc;
+      max-width: 620px;
+      line-height: 1.6;
+      margin: 0 0 2rem;
+    }
+    .index-author-block {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .index-author-name {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .index-author-role {
+      font-size: 0.82rem;
+      color: #888;
+      font-weight: 400;
+    }
+    .index-contact {
+      font-size: 0.82rem;
+      color: #888;
+      margin-left: auto;
+    }
+    .index-contact a {
+      color: #ccc;
+      text-decoration: none;
+      border-bottom: 1px solid #555;
+    }
+    .index-contact a:hover { color: #fff; border-color: #fff; }
+
+    /* ── Toolbar ── */
+    .index-toolbar {
+      background: #111;
+      border-bottom: 1px solid #222;
+      padding: 0.55rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .index-toolbar-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .toolbar-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #555;
+      margin-right: auto;
+    }
+    .lang-toggle-index {
+      background: #fff;
+      color: #000;
+      border: none;
+      padding: 0.3rem 0.9rem;
+      font-family: 'Roboto', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      cursor: pointer;
+      text-transform: uppercase;
+    }
+    .lang-toggle-index:hover { background: #ddd; }
+
+    /* ── Main content ── */
+    .index-main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+
+    /* ── Section heading ── */
+    .index-section-head {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #000;
+      border-bottom: 2px solid #000;
+      padding-bottom: 0.4rem;
+      margin-bottom: 1.75rem;
+    }
+
+    /* ── Publication card ── */
+    .pub-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .pub-card {
+      display: grid;
+      grid-template-columns: 3.5rem 1fr auto;
+      gap: 0 1.5rem;
+      align-items: start;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid #e0e0e0;
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.1s;
+    }
+    .pub-card:hover { background: #f7f7f7; padding-left: 0.5rem; padding-right: 0.5rem; margin: 0 -0.5rem; }
+    .pub-card:first-child { border-top: 1px solid #e0e0e0; }
+    .pub-number {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: #bbb;
+      line-height: 1;
+      padding-top: 0.15rem;
+      text-align: right;
+    }
+    .pub-body {}
+    .pub-type {
+      font-size: 0.66rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 0.3rem;
+    }
+    .pub-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1.25;
+      margin-bottom: 0.4rem;
+      color: #000;
+    }
+    .pub-desc {
+      font-size: 0.9rem;
+      color: #444;
+      line-height: 1.55;
+      max-width: 560px;
+      margin-bottom: 0.5rem;
+    }
+    .pub-meta {
+      font-size: 0.75rem;
+      color: #999;
+      font-family: 'Roboto Mono', monospace;
+    }
+    .pub-badge {
+      display: inline-block;
+      background: #000;
+      color: #fff;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.5rem;
+      align-self: start;
+      margin-top: 0.2rem;
+      white-space: nowrap;
+    }
+    .pub-badge.upcoming {
+      background: #fff;
+      color: #000;
+      border: 1px solid #000;
+    }
+
+    /* ── Placeholder cards ── */
+    .pub-card.placeholder {
+      opacity: 0.45;
+      pointer-events: none;
+      cursor: default;
+    }
+
+    /* ── About strip ── */
+    .about-strip {
+      margin-top: 3.5rem;
+      border-top: 2px solid #000;
+      padding-top: 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    .about-head {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+    .about-body {
+      font-size: 0.88rem;
+      color: #333;
+      line-height: 1.65;
+    }
+    .about-body strong { color: #000; }
+
+    /* ── Disclosure ── */
+    .disclosure-block {
+      margin-top: 2.5rem;
+      padding: 1.25rem 1.5rem;
+      border: 1px solid #000;
+      background: #f9f9f9;
+    }
+    .disclosure-label {
+      font-size: 0.66rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+      color: #000;
+    }
+    .disclosure-text {
+      font-size: 0.82rem;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* ── Footer ── */
+    .index-footer {
+      background: #000;
+      color: #999;
+      padding: 1.5rem 2rem;
+      font-size: 0.75rem;
+      margin-top: 4rem;
+    }
+    .index-footer-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .index-footer a { color: #ccc; text-decoration: none; }
+    .index-footer a:hover { color: #fff; }
+
+    @media (max-width: 640px) {
+      .about-strip { grid-template-columns: 1fr; }
+      .pub-card { grid-template-columns: 2.5rem 1fr; }
+      .pub-badge { grid-column: 2; }
+      .index-contact { margin-left: 0; width: 100%; }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Skip to content -->
-  <a href="#main-content" class="skip-link" tabindex="0">Skip to main content</a>
+<!-- Skip to content -->
+<a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:0;background:#fff;color:#000;padding:0.5rem 1rem;z-index:9999;font-size:0.85rem;">Skip to main content</a>
 
-  <!-- TOP UTILITY BAR (Kremlin-style) -->
-  <div class="utility-bar" role="banner" aria-label="Site utility bar">
-    <div class="utility-inner">
-      <span class="utility-brand">BRASIDAS STRATEGIES</span>
-      <div class="utility-controls">
-        <button id="lang-toggle" class="lang-btn" aria-label="Switch language" tabindex="0">
-          <span id="lang-label">ES →</span>
-        </button>
-        <button id="contrast-btn" class="util-btn" aria-label="Toggle high contrast" tabindex="0">◑ CONTRAST</button>
-        <button id="font-up" class="util-btn" aria-label="Increase text size" tabindex="0">A+</button>
-        <button id="font-down" class="util-btn" aria-label="Decrease text size" tabindex="0">A−</button>
-        <button id="read-btn" class="util-btn" aria-label="Read page aloud" tabindex="0">▶ READ</button>
+<!-- ══ UTILITY BAR ══ -->
+<div class="index-toolbar" role="navigation" aria-label="Site controls">
+  <div class="index-toolbar-inner">
+    <span class="toolbar-label" data-i18n-idx="toolbar_label">Brasidas Strategies — Public Research</span>
+    <button class="lang-toggle-index" id="langToggleIdx" aria-label="Toggle language" onclick="toggleLangIndex()">ES →</button>
+  </div>
+</div>
+
+<!-- ══ HERO ══ -->
+<header class="index-hero" role="banner">
+  <div class="index-hero-inner">
+    <div class="index-org" data-i18n-idx="org_label">Brasidas Strategies · Public Interest Research</div>
+    <h1 class="index-title" data-i18n-idx="hero_title">PUBLICATIONS</h1>
+    <p class="index-subtitle" data-i18n-idx="hero_subtitle">Independent open-source research for communities, veterans, and the public record. Every claim sourced. Every calculation shown.</p>
+    <div class="index-author-block">
+      <span class="index-author-name">Arnoldo Alonso</span>
+      <span class="index-author-role" data-i18n-idx="author_role">Founder, Brasidas Strategies · System Architect, Ayala™</span>
+      <span class="index-contact"><a href="https://t.me/alonsobrx" target="_blank" rel="noopener">Telegram @alonsobrx</a></span>
+    </div>
+  </div>
+</header>
+
+<!-- ══ MAIN ══ -->
+<main id="main-content" class="index-main">
+
+  <!-- Reports -->
+  <div class="index-section-head" data-i18n-idx="section_reports">Intelligence Reports</div>
+  <div class="pub-list" role="list">
+
+    <!-- Report 001 — Saronic / Port Alpha -->
+    <a class="pub-card" href="reports/saronic-port-alpha.html" role="listitem" aria-label="Read: The People's Brief — Saronic Technologies & Port Alpha">
+      <div class="pub-number">001</div>
+      <div class="pub-body">
+        <div class="pub-type" data-i18n-idx="type_intel">Intelligence Report · Public Interest</div>
+        <div class="pub-title" data-i18n-idx="r001_title">The People's Brief: Saronic Technologies &amp; Port Alpha</div>
+        <div class="pub-desc" data-i18n-idx="r001_desc">A full mathematical and structural deconstruction of the $852M tax abatement request submitted to Cameron County, Texas by Saronic Technologies. Covers scale feasibility, revenue gap analysis, historical precedent, and the 21 questions every elected official must answer before voting.</div>
+        <div class="pub-meta">June 2026 · Cameron County, TX · <span data-i18n-idx="r001_lang">English / Español</span></div>
       </div>
+      <div class="pub-badge" data-i18n-idx="badge_live">Live</div>
+    </a>
+
+    <!-- Placeholder 002 -->
+    <div class="pub-card placeholder" role="listitem" aria-hidden="true">
+      <div class="pub-number">002</div>
+      <div class="pub-body">
+        <div class="pub-type" data-i18n-idx="type_intel">Intelligence Report · Public Interest</div>
+        <div class="pub-title" data-i18n-idx="r002_title">Next Report</div>
+        <div class="pub-desc" data-i18n-idx="r002_desc">Future public interest analysis. Submit a tip or request via Telegram.</div>
+        <div class="pub-meta" data-i18n-idx="r002_date">Forthcoming</div>
+      </div>
+      <div class="pub-badge upcoming" data-i18n-idx="badge_soon">Forthcoming</div>
+    </div>
+
+  </div>
+
+  <!-- About -->
+  <div class="about-strip">
+    <div>
+      <div class="about-head" data-i18n-idx="about_head">About This Work</div>
+      <p class="about-body" data-i18n-idx="about_body">
+        This research is produced by <strong>Brasidas Strategies</strong>, an independent research operation founded by Arnoldo Alonso. All analysis is powered by <strong>Ayala™</strong> — a proprietary neurointelligence research system developed over more than a decade. Publications are released free of charge for public use, distribution, and adaptation.
+      </p>
+    </div>
+    <div>
+      <div class="about-head" data-i18n-idx="mission_head">Mission</div>
+      <p class="about-body" data-i18n-idx="mission_body">
+        The goal is mass education. To give ordinary people the same analytical tools used by investors, lobbyists, and policy professionals — and to apply those tools in the public interest. Knowledge is the only antidote to extraction.
+      </p>
     </div>
   </div>
 
-  <!-- MAIN HEADER (HSE/Kremlin style — dense, institutional) -->
-  <header class="site-header" role="banner">
-    <div class="header-inner">
-      <div class="header-title-block">
-        <div class="header-doc-type" data-i18n="doc_type">INTELLIGENCE REPORT — PUBLIC INTEREST</div>
-        <h1 class="header-main-title" data-i18n="site_title">THE PEOPLE'S BRIEF</h1>
-        <div class="header-subtitle" data-i18n="site_subtitle">Understanding and Evaluating Large-Scale Economic Incentive Proposals</div>
-      </div>
-      <div class="header-meta-block">
-        <div class="header-author">
-          <span class="meta-label" data-i18n="prepared_by_label">PREPARED BY</span>
-          <span class="meta-name">Arnoldo Alonso</span>
-          <span class="meta-role" data-i18n="author_role">Founder, Brasidas Strategies</span>
-        </div>
-        <div class="header-ayala">
-          <span class="meta-label" data-i18n="ayala_label">WITH ASSISTANCE OF</span>
-          <span class="meta-ayala">Ayala™ — Neurointelligence Agent</span>
-        </div>
-        <div class="header-dateline">
-          <span data-i18n="dateline">June 2026 · Open Source · Public Interest &amp; Educational Use</span>
-        </div>
-        <div class="header-contact">
-          <a href="https://t.me/alonsobrx" class="contact-link" target="_blank" rel="noopener">Telegram @alonsobrx</a>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <!-- SECTION NAV BAR (Kremlin horizontal nav) -->
-  <nav class="section-nav" role="navigation" aria-label="Document sections">
-    <div class="nav-inner">
-      <a href="#letter" class="nav-item" data-i18n="nav_letter" tabindex="0">LETTER</a>
-      <a href="#executive-summary" class="nav-item" data-i18n="nav_exec" tabindex="0">EXEC SUMMARY</a>
-      <a href="#section1" class="nav-item" data-i18n="nav_s1" tabindex="0">§1 EVIDENCE</a>
-      <a href="#section2" class="nav-item" data-i18n="nav_s2" tabindex="0">§2 PROPOSAL</a>
-      <a href="#section3" class="nav-item" data-i18n="nav_s3" tabindex="0">§3 MATH</a>
-      <a href="#section4" class="nav-item" data-i18n="nav_s4" tabindex="0">§4 PLAYBOOK</a>
-      <a href="#section5" class="nav-item" data-i18n="nav_s5" tabindex="0">§5 QUESTIONS</a>
-      <a href="#section6" class="nav-item" data-i18n="nav_s6" tabindex="0">§6 WHY</a>
-      <a href="#section7" class="nav-item" data-i18n="nav_s7" tabindex="0">§7 STATEMENT</a>
-      <a href="#final-word" class="nav-item" data-i18n="nav_final" tabindex="0">FINAL WORD</a>
-    </div>
-  </nav>
-
-  <!-- READING PROGRESS -->
-  <div class="progress-bar" id="progress-bar" role="progressbar" aria-label="Reading progress"></div>
-
-  <!-- ARIA LIVE REGION -->
-  <div aria-live="polite" aria-atomic="true" id="live-region" class="sr-only"></div>
-
-  <!-- LAYOUT WRAPPER -->
-  <div class="layout-wrapper">
-
-    <!-- LEFT SIDEBAR (fixed, Kremlin-style document nav) -->
-    <aside class="sidebar" role="complementary" aria-label="Section navigation">
-      <div class="sidebar-inner">
-        <div class="sidebar-heading" data-i18n="sidebar_heading">CONTENTS</div>
-        <nav aria-label="Sidebar document contents">
-          <a href="#letter" class="sidebar-link active" data-section="letter" tabindex="0">
-            <span class="sidebar-num">—</span>
-            <span data-i18n="nav_letter">Letter to the Reader</span>
-          </a>
-          <a href="#executive-summary" class="sidebar-link" data-section="executive-summary" tabindex="0">
-            <span class="sidebar-num">—</span>
-            <span data-i18n="nav_exec_long">Executive Summary</span>
-          </a>
-          <a href="#section1" class="sidebar-link" data-section="section1" tabindex="0">
-            <span class="sidebar-num">§1</span>
-            <span data-i18n="nav_s1_long">The Evidence</span>
-          </a>
-          <a href="#section2" class="sidebar-link" data-section="section2" tabindex="0">
-            <span class="sidebar-num">§2</span>
-            <span data-i18n="nav_s2_long">The Proposal</span>
-          </a>
-          <a href="#section3" class="sidebar-link" data-section="section3" tabindex="0">
-            <span class="sidebar-num">§3</span>
-            <span data-i18n="nav_s3_long">The Math</span>
-          </a>
-          <a href="#section4" class="sidebar-link" data-section="section4" tabindex="0">
-            <span class="sidebar-num">§4</span>
-            <span data-i18n="nav_s4_long">Extraction Playbook</span>
-          </a>
-          <a href="#section5" class="sidebar-link" data-section="section5" tabindex="0">
-            <span class="sidebar-num">§5</span>
-            <span data-i18n="nav_s5_long">21 Questions</span>
-          </a>
-          <a href="#section6" class="sidebar-link" data-section="section6" tabindex="0">
-            <span class="sidebar-num">§6</span>
-            <span data-i18n="nav_s6_long">Why It Persists</span>
-          </a>
-          <a href="#section7" class="sidebar-link" data-section="section7" tabindex="0">
-            <span class="sidebar-num">§7</span>
-            <span data-i18n="nav_s7_long">Public Statement</span>
-          </a>
-          <a href="#final-word" class="sidebar-link" data-section="final-word" tabindex="0">
-            <span class="sidebar-num">—</span>
-            <span data-i18n="nav_final_long">Final Word</span>
-          </a>
-        </nav>
-        <div class="sidebar-divider"></div>
-        <div class="sidebar-classification">
-          <span data-i18n="classification">OPEN SOURCE<br>PUBLIC INTEREST</span>
-        </div>
-      </div>
-    </aside>
-
-    <!-- MAIN CONTENT -->
-    <main id="main-content" class="main-content" role="main">
-
-      <!-- LETTER TO THE READER -->
-      <article id="letter" class="doc-section" aria-labelledby="letter-heading">
-        <div class="section-rule">
-          <span class="section-rule-label" data-i18n="letter_label">A LETTER TO THE READER</span>
-        </div>
-        <div class="doc-body">
-          <p class="drop-cap" data-i18n="letter_p1">I am not a lobbyist. I am not a consultant. I am not paid by any company, any economic development corporation, or any government agency. I am a service-connected disabled veteran who served thirteen years in the United States Army as a Staff Sergeant. I am a lifelong resident of the Rio Grande Valley. I built a neurointelligence system called Ayala™ with my own savings — $396,000 invested over more than a decade — to help veterans, the blind, the disabled, and their families navigate systems that were designed to exhaust them.</p>
-          <p data-i18n="letter_p2">Along the way, I discovered that the same analytical tools I built to fight the VA could be applied to another kind of extraction: the economic development deals that have been devastating communities like mine for decades.</p>
-          <p data-i18n="letter_p3">This document is the product of that work. It is not written to tell you what to think. It is written to give you the tools to think for yourself. Every claim is sourced. Every calculation is shown. Every concept is explained. If you read nothing else, read the Executive Summary. If you want to understand the math, read Section 3. If you want to know what questions to ask your elected officials, read Section 5. If you want to understand why this keeps happening, read Section 6.</p>
-          <p data-i18n="letter_p4">I offer this freely to anyone who wants it. Reproduce it. Share it. Use it at public hearings. Use it to question your representatives. Use it to educate your neighbors. Knowledge is the only antidote to extraction.</p>
-          <p class="signature" data-i18n="letter_sig">— Arnoldo Alonso</p>
-        </div>
-      </article>
-
-      <!-- EXECUTIVE SUMMARY -->
-      <article id="executive-summary" class="doc-section" aria-labelledby="exec-heading">
-        <div class="section-rule">
-          <span class="section-rule-label" data-i18n="exec_label">EXECUTIVE SUMMARY</span>
-        </div>
-        <div class="doc-body">
-          <h2 class="subsection-head" data-i18n="exec_finding_head">The Central Finding</h2>
-          <p data-i18n="exec_finding_body">For over forty years, communities across the United States have been offered the same deal: give a large corporation a massive tax break, and it will bring jobs and prosperity. The academic evidence demonstrates that this model does not work. In the overwhelming majority of cases, the promised jobs fail to materialize at the promised scale and wages, the public cost far exceeds any plausible fiscal return, and the primary beneficiaries are corporate shareholders — not the community.</p>
-
-          <h2 class="subsection-head" data-i18n="exec_situation_head">The Current Situation</h2>
-          <p data-i18n="exec_situation_body">A company is seeking a 95% property tax abatement from Cameron County, Texas, to build a large manufacturing facility. The company projects "up to 10,000 jobs" and an average wage near $90,000. The Commissioners Court vote is scheduled for June 16, 2026.</p>
-
-          <h2 class="subsection-head" data-i18n="exec_provides_head">What This Document Provides</h2>
-          <ol class="doc-list" aria-label="Document sections">
-            <li data-i18n="exec_item1"><strong>The Scientific Evidence</strong> — forty years of peer-reviewed research on business tax incentives</li>
-            <li data-i18n="exec_item2"><strong>The Mathematical Analysis</strong> — step-by-step deconstruction of the company's claims</li>
-            <li data-i18n="exec_item3"><strong>The Historical Record</strong> — comparable deals and what actually happened</li>
-            <li data-i18n="exec_item4"><strong>The Red Flags Checklist</strong> — eight-point framework for evaluating any incentive proposal</li>
-            <li data-i18n="exec_item5"><strong>The Questions to Ask</strong> — 21 specific questions demanding public answers</li>
-            <li data-i18n="exec_item6"><strong>The Deeper Pattern</strong> — why this model persists despite documented failure</li>
-          </ol>
-
-          <div class="finding-box" role="note" aria-label="Key recommendation">
-            <div class="finding-box-label" data-i18n="recommendation_label">RECOMMENDATION</div>
-            <p data-i18n="recommendation_body">Do not approve the incentive package as currently presented. Demand verifiable, independent evidence supporting every projection. Require binding, enforceable commitments with automatic penalties for non-performance. If the company cannot meet these conditions, it has no business asking for public funds.</p>
-          </div>
-        </div>
-      </article>
-
-      <!-- SECTION 1 -->
-      <article id="section1" class="doc-section" aria-labelledby="s1-heading">
-        <div class="section-rule">
-          <span class="section-num">§1</span>
-          <span class="section-rule-label" data-i18n="s1_label">THE EVIDENCE — WHAT SCIENCE TELLS US</span>
-        </div>
-        <div class="doc-body">
-          <h2 class="subsection-head" data-i18n="s1_experts_head">1.1 The Experts Have Spoken</h2>
-          <p data-i18n="s1_intro">The question of whether business tax incentives work has been studied for decades by the most respected economists in the world. Their findings are published in peer-reviewed journals. They have no financial stake in any particular incentive deal.</p>
-
-          <div class="scholar-block">
-            <div class="scholar-name" data-i18n="scholar1_name">Dr. Timothy Bartik — W.E. Upjohn Institute (2019)</div>
-            <ul class="doc-list">
-              <li data-i18n="scholar1_p1">At least 90% of large incentive packages are unnecessary. The company would have chosen a similar location without the subsidy.</li>
-              <li data-i18n="scholar1_p2">Average public cost per job created: $100,000 to $200,000 — far exceeding any tax revenue the community will ever recover.</li>
-              <li data-i18n="scholar1_p3">Most jobs go to people who don't live in the community. They commute in, spend their money elsewhere.</li>
-            </ul>
-          </div>
-
-          <div class="scholar-block">
-            <div class="scholar-name" data-i18n="scholar2_name">Dr. Neumark &amp; Dr. Kolko — Journal of Urban Economics (2010)</div>
-            <blockquote class="doc-quote" data-i18n="scholar2_quote">"The enterprise zone programs we study tend to have little or no positive effect on the economic outcomes of zone residents."</blockquote>
-          </div>
-
-          <div class="scholar-block">
-            <div class="scholar-name" data-i18n="scholar3_name">Busso, Gregory &amp; Kline — American Economic Review (2013)</div>
-            <blockquote class="doc-quote" data-i18n="scholar3_quote">"We find no detectable effect on employment or wages" for zone residents. The primary beneficiaries were property owners — landlords, developers, and speculators.</blockquote>
-          </div>
-
-          <div class="scholar-block">
-            <div class="scholar-name" data-i18n="scholar4_name">Dr. Slattery &amp; Dr. Zidar — Journal of Economic Perspectives (2020)</div>
-            <blockquote class="doc-quote" data-i18n="scholar4_quote">"We do not find strong evidence that firm-specific tax incentives increase broader economic growth."</blockquote>
-          </div>
-
-          <div class="scholar-block">
-            <div class="scholar-name" data-i18n="scholar5_name">Dr. Chirinko &amp; Dr. Wilson — Journal of Public Economics (2008)</div>
-            <p data-i18n="scholar5_body">State investment tax credits are a "zero-sum game" — they simply move economic activity from one state to another without creating any net new growth.</p>
-          </div>
-
-          <h2 class="subsection-head" data-i18n="s1_prosperity_head">1.2 What Creates Real Prosperity?</h2>
-          <p data-i18n="s1_prosperity_intro">A 2019 study by the Political Economy Research Institute, University of Massachusetts Amherst:</p>
-
-          <table class="doc-table" aria-label="Jobs created per billion dollars invested by investment type">
-            <caption class="sr-only" data-i18n="table1_caption">Jobs Created per $1 Billion Invested</caption>
-            <thead>
-              <tr>
-                <th scope="col" data-i18n="table_col_investment">Investment Type</th>
-                <th scope="col" data-i18n="table_col_jobs">Jobs Created per $1 Billion</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td data-i18n="invest_education">Education</td><td class="num-cell">26,000</td></tr>
-              <tr><td data-i18n="invest_transit">Mass Transit</td><td class="num-cell">22,000</td></tr>
-              <tr><td data-i18n="invest_healthcare">Healthcare</td><td class="num-cell">18,000</td></tr>
-              <tr><td data-i18n="invest_energy">Clean Energy</td><td class="num-cell">17,000</td></tr>
-              <tr class="table-highlight"><td data-i18n="invest_defense">Defense Manufacturing</td><td class="num-cell">11,000</td></tr>
-            </tbody>
-          </table>
-
-          <h2 class="subsection-head" data-i18n="s1_history_head">1.3 The Historical Record</h2>
-          <table class="doc-table" aria-label="Historical incentive deal failures">
-            <thead>
-              <tr>
-                <th scope="col" data-i18n="hist_col1">Company / Location</th>
-                <th scope="col" data-i18n="hist_col2">Year</th>
-                <th scope="col" data-i18n="hist_col3">Subsidy</th>
-                <th scope="col" data-i18n="hist_col4">Jobs Promised</th>
-                <th scope="col" data-i18n="hist_col5">Outcome</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Foxconn / Wisconsin</td><td>2017</td><td>$4.8B</td><td>13,000</td>
-                <td data-i18n="foxconn_outcome">768 jobs delivered. Deal renegotiated 2021. $10B investment never made.</td>
-              </tr>
-              <tr>
-                <td>Nissan / Mississippi</td><td>2000</td><td>$1.3B</td><td data-i18n="nissan_promised">Thousands</td>
-                <td data-i18n="nissan_outcome">Wages $10–$15/hr with heavy temp staffing. No economic transformation.</td>
-              </tr>
-              <tr>
-                <td>Boeing / S. Carolina</td><td>2009</td><td>$900M</td><td data-i18n="boeing_promised">Thousands</td>
-                <td data-i18n="boeing_outcome">Jobs delivered at ~$230,000 per position in public subsidy.</td>
-              </tr>
-              <tr>
-                <td>Amazon HQ2 / New York</td><td>2018</td><td>$1.5B+</td><td>25,000</td>
-                <td data-i18n="amazon_outcome">Public opposition killed the deal. Company expanded elsewhere without the subsidy.</td>
-              </tr>
-              <tr>
-                <td>Tesla / Nevada</td><td>2014</td><td>$1.3B</td><td>6,500</td>
-                <td data-i18n="tesla_outcome">Below-target delivery. Wages mixed.</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </article>
-
-      <!-- SECTION 2 -->
-      <article id="section2" class="doc-section" aria-labelledby="s2-heading">
-        <div class="section-rule">
-          <span class="section-num">§2</span>
-          <span class="section-rule-label" data-i18n="s2_label">THE CURRENT PROPOSAL</span>
-        </div>
-        <div class="doc-body">
-          <h2 class="subsection-head" data-i18n="s2_company_head">2.1 The Company</h2>
-          <p data-i18n="s2_company_body">Saronic Technologies — a defense startup designing autonomous vessels for maritime military applications. Founded 2022, Austin TX. Raised $2.525 billion in venture capital. Valued at $7.5 billion (Series D, March 2026). Verified employees as of late 2024: <strong>271</strong> (Exa Intelligence).</p>
-
-          <div class="correction-box" role="note" aria-label="Audit correction">
-            <div class="correction-label" data-i18n="audit_label">AUDIT NOTE</div>
-            <p data-i18n="s2_employee_correction">An earlier draft cited ~1,300 employees. The verified figure from Exa Intelligence (late 2024) is 271. 2026 headcount may be higher but has not been publicly disclosed. All calculations use the verified 271 baseline.</p>
-          </div>
-
-          <div class="correction-box" role="note" aria-label="Audit correction">
-            <div class="correction-label" data-i18n="audit_label">AUDIT NOTE</div>
-            <p data-i18n="s2_contract_correction">An earlier draft stated "no publicly disclosed Navy contracts." This was incorrect. Saronic holds a $392M Other Transaction Authority (OTA) contract over 6 years (2025–2031) for Corsair-class autonomous surface vessels — $65.3M/year. Source: HyperSinc. This contract is public and verified.</p>
-          </div>
-
-          <h2 class="subsection-head" data-i18n="s2_proposal_head">2.2 The Proposal</h2>
-          <p data-i18n="s2_proposal_body">95% property tax abatement on $2.7B taxable value, 19 years (2029–2048). "Up to 10,000 jobs" at average $90,000. Minimum wage $25/hour ($52,000/year). 835 acres at Port of Brownsville. Vote tabled June 3, 2026. Next vote: June 16, 2026.</p>
-
-          <div class="correction-box" role="note">
-            <div class="correction-label" data-i18n="audit_label">AUDIT NOTE</div>
-            <p data-i18n="s2_abatement_correction">An earlier estimate cited "over $100 million" — that was the county's preliminary annual figure. The verified 19-year total: $2.7B × 1.75% × 95% × 19 years = <strong>$852,862,500</strong>. Nearly $853 million in forgone public revenue.</p>
-          </div>
-
-          <h2 class="subsection-head" data-i18n="s2_changes_head">2.3 What Changes Everything</h2>
-          <ul class="doc-list">
-            <li data-i18n="s2_change1">The company already operates a shipyard in Franklin, Louisiana — acquired facility (Gulf Craft, early 2025), $500M+ deployed, first vessel launched May 2026. Port Alpha is expansion, not survival.</li>
-            <li data-i18n="s2_change2">The CEO's background is private equity — Vista Equity Partners, H.I.G. Capital, Blackstone Real Estate. Training in extracting value for investors, not building sustainable manufacturing operations.</li>
-            <li data-i18n="s2_change3">Saronic is one of <strong>seven competitors</strong> for the Navy MUSV contract — including Huntington Ingalls Industries (the largest Navy shipbuilder in the US) and Leidos ($14B defense contractor).</li>
-            <li data-i18n="s2_change4">gCaptain, authoritative maritime industry publication: "The speed everyone is applauding was already sitting in that boatshed before Saronic's logo went on the door." The Franklin timeline does not predict the Port Alpha timeline.</li>
-          </ul>
-        </div>
-      </article>
-
-      <!-- SECTION 3 -->
-      <article id="section3" class="doc-section" aria-labelledby="s3-heading">
-        <div class="section-rule">
-          <span class="section-num">§3</span>
-          <span class="section-rule-label" data-i18n="s3_label">THE MATH — STEP BY STEP</span>
-        </div>
-        <div class="doc-body">
-          <p class="section-lead" data-i18n="s3_intro">Every calculation is shown. Every assumption is stated. Every source is cited.</p>
-
-          <h2 class="subsection-head" data-i18n="s3_payroll_head">3.1 The Payroll Problem</h2>
-          <div class="math-block" aria-label="Payroll calculation">
-            <div class="math-line">10,000 workers × $90,000 = <strong>$900,000,000 / year</strong></div>
-            <div class="math-line">+ 30% benefits burden = <strong>$1,170,000,000 / year total labor cost</strong></div>
-            <div class="math-divider"></div>
-            <div class="math-line">Verified Navy OTA: $392M ÷ 6 years = <strong>$65,333,333 / year</strong></div>
-            <div class="math-line">Revenue gap: $1,170M − $65.3M = <strong>$1,104,700,000 / year UNFUNDED</strong></div>
-          </div>
-          <div class="finding-box" role="note">
-            <div class="finding-box-label" data-i18n="finding_label">FINDING</div>
-            <p data-i18n="s3_payroll_finding">The company needs over $2 billion in annual revenue to sustain the promised payroll. It has not demonstrated a single dollar of that revenue is secured. The entire projection depends on future government contracts that do not yet exist, in a competition it is not guaranteed to win.</p>
-          </div>
-
-          <h2 class="subsection-head" data-i18n="s3_workforce_head">3.2 The Workforce That Cannot Be Hired</h2>
-          <div class="math-block" aria-label="Workforce calculation">
-            <div class="math-line">Net hires needed: 10,000 − 271 = 9,729 people</div>
-            <div class="math-line">Over 10 years: 9,729 ÷ 10 = <strong>973 new workers / year</strong></div>
-            <div class="math-line">Monthly: 973 ÷ 12 = <strong>81 new hires / month for a decade</strong></div>
-            <div class="math-line">Scale factor: 10,000 ÷ 271 = <strong>36.9× workforce growth</strong></div>
-            <div class="math-divider"></div>
-            <div class="math-line">RGV labor supply: ~1,600 qualified workers/year across ALL employers</div>
-            <div class="math-line">Required share: 973 ÷ 1,600 = <strong>61% of every qualified worker in the region</strong></div>
-          </div>
-          <div class="finding-box" role="note">
-            <div class="finding-box-label" data-i18n="finding_label">FINDING</div>
-            <p data-i18n="s3_workforce_finding">No American shipyard has ever expanded its workforce by a factor of 10 in a decade. The company has not disclosed any training program, educational partnership, or plan to recruit workers from outside the region.</p>
-          </div>
-
-          <h2 class="subsection-head" data-i18n="s3_wage_head">3.3 The Average Wage Illusion</h2>
-          <p data-i18n="s3_wage_body">An average is not the typical wage. Example: 100 executives at $500,000 + 9,900 workers at $52,000 = average of $56,480. Nine of ten workers earn the floor. The company's reported average shifted 19% — from $75,500 to $90,000 — between initial press coverage and the formal presentation, with no explanation. No wage distribution has been disclosed.</p>
-
-          <h2 class="subsection-head" data-i18n="s3_subsidy_head">3.4 The True Subsidy</h2>
-          <div class="math-block" aria-label="Subsidy calculation">
-            <div class="math-line">$2.7B × 1.75% tax rate × 95% abatement × 19 years = <strong>$852,862,500</strong></div>
-            <div class="math-line">Per realistic Phase 1 job (1,500 jobs): <strong>$568,575 per job</strong></div>
-            <div class="math-line">Bartik academic benchmark for fiscal soundness: <strong>$50,000 per job</strong></div>
-            <div class="math-line result-line" data-i18n="s3_subsidy_result">This deal is 11× above the threshold at best. 34× above in the pessimistic scenario.</div>
-          </div>
-
-          <h2 class="subsection-head" data-i18n="s3_water_head">3.5 The Hidden Water Cost</h2>
-          <p data-i18n="s3_water_body">A major shipyard consumes millions of gallons of water per day. Brownsville PUB CEO stated publicly: "large industrial users seeking guaranteed water capacity may need agreements that help fund new water sources." Independent estimates: $150M–$400M in required water infrastructure — entirely separate from the tax abatement. No disclosure from the company.</p>
-
-          <h2 class="subsection-head" data-i18n="s3_parlay_head">3.6 The Five-Leg Parlay</h2>
-          <p data-i18n="s3_parlay_intro">For Port Alpha to deliver all promised value, five independent conditions must be simultaneously true:</p>
-          <table class="doc-table" aria-label="Five conditions joint probability analysis">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col" data-i18n="parlay_col_condition">Condition</th>
-                <th scope="col" data-i18n="parlay_col_prob">Est. Probability</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td>1</td><td data-i18n="cond1">Navy autonomous vessel contracts scale from $65M/yr to $2B+/yr</td><td class="num-cell">30%</td></tr>
-              <tr><td>2</td><td data-i18n="cond2">Saronic wins large MUSV share vs. 6 competitors including HII and Leidos</td><td class="num-cell">25%</td></tr>
-              <tr><td>3</td><td data-i18n="cond3">10,000 jobs materialize at a true $90,000 average wage</td><td class="num-cell">20%</td></tr>
-              <tr><td>4</td><td data-i18n="cond4">Majority of jobs filled by Cameron County residents</td><td class="num-cell">50%</td></tr>
-              <tr><td>5</td><td data-i18n="cond5">No clawback failure or renegotiation over 19 years</td><td class="num-cell">55%</td></tr>
-            </tbody>
-          </table>
-          <div class="math-block" aria-label="Joint probability calculation">
-            <div class="math-line">P = 0.30 × 0.25 × 0.20 × 0.50 × 0.55</div>
-            <div class="math-line result-line"><strong>P = 0.4125% ≈ 0.4%</strong></div>
-          </div>
-          <div class="finding-box" role="note">
-            <div class="finding-box-label" data-i18n="finding_label">FINDING</div>
-            <p data-i18n="s3_parlay_finding">Cameron County is being asked to commit $853 million — nearly one billion dollars of public revenue — on a deal with a 0.4% probability of full success. Even if individual probabilities are doubled, the joint probability remains under 7%.</p>
-          </div>
-        </div>
-      </article>
-
-      <!-- SECTION 4 -->
-      <article id="section4" class="doc-section" aria-labelledby="s4-heading">
-        <div class="section-rule">
-          <span class="section-num">§4</span>
-          <span class="section-rule-label" data-i18n="s4_label">THE EXTRACTION PLAYBOOK</span>
-        </div>
-        <div class="doc-body">
-          <p data-i18n="s4_intro">The incentive negotiation process follows a predictable, well-documented pattern. Understanding this pattern is essential to resisting it.</p>
-          <ol class="doc-list playbook-list">
-            <li data-i18n="s4_step1"><strong>The company identifies multiple potential sites.</strong></li>
-            <li data-i18n="s4_step2"><strong>The company creates competition among them.</strong> Each jurisdiction is told — explicitly or implicitly — that it is competing against other sites with generous offers. This creates anxiety among local officials who fear losing the project.</li>
-            <li data-i18n="s4_step3"><strong>The company extracts maximum concessions.</strong> Jurisdictions, driven by fear of losing out, increase their offers. The "winning" bid far exceeds what was actually necessary to attract the investment.</li>
-            <li data-i18n="s4_step4"><strong>The company selects the location it preferred all along.</strong> Bartik's research: true in at least 90% of cases. The subsidy did not change the decision; it simply enriched the company at public expense.</li>
-            <li data-i18n="s4_step5"><strong>The promised benefits fail to materialize.</strong> Headline job numbers are for a distant final phase. The binding Phase 1 commitment is a fraction. Even that is often not met.</li>
-          </ol>
-          <div class="gray-box" role="note">
-            <p data-i18n="s4_louisiana"><strong>The Louisiana Factor:</strong> The company already owns an operating shipyard in Louisiana. Cameron County is not competing with Louisiana — the company is expanding from an existing base. The company needs Port Alpha to justify its $7.5B valuation to investors. That gives Cameron County leverage — not to offer more, but to demand better terms.</p>
-          </div>
-        </div>
-      </article>
-
-      <!-- SECTION 5 -->
-      <article id="section5" class="doc-section" aria-labelledby="s5-heading">
-        <div class="section-rule">
-          <span class="section-num">§5</span>
-          <span class="section-rule-label" data-i18n="s5_label">21 QUESTIONS YOUR ELECTED OFFICIALS MUST ASK</span>
-        </div>
-        <div class="doc-body">
-          <p data-i18n="s5_intro">The following questions should be asked publicly, under oath, with answers recorded and made available to the public before any vote is taken.</p>
-
-          <h2 class="subsection-head" data-i18n="s5_revenue_head">Revenue &amp; Contracts</h2>
-          <ol class="doc-list" start="1">
-            <li data-i18n="q1">Does the company have existing Navy procurement contracts? Provide contract numbers, award dates, values, and durations.</li>
-            <li data-i18n="q2">Does the company have letters of intent or MOUs with the Department of Defense or any prime defense contractor?</li>
-            <li data-i18n="q3">Does the company have commercial vessel orders? From whom, at what volume, at what price?</li>
-            <li data-i18n="q4">How much annual revenue does the company currently generate? Provide audited financial statements.</li>
-            <li data-i18n="q5">How does the company plan to generate $2.25B–$2.70B in annual revenue to sustain the proposed payroll?</li>
-          </ol>
-
-          <h2 class="subsection-head" data-i18n="s5_jobs_head">Jobs &amp; Wages</h2>
-          <ol class="doc-list" start="6">
-            <li data-i18n="q6">What is the specific, binding Phase 1 job target, and by what year must it be achieved?</li>
-            <li data-i18n="q7">What is the full projected wage distribution, by $10,000 bands?</li>
-            <li data-i18n="q8">How many of the "up to 10,000 jobs" will be direct hires versus temp agency employees?</li>
-            <li data-i18n="q9">Will production workers receive health insurance, retirement benefits, and paid leave?</li>
-            <li data-i18n="q10">Why did the average wage change from $75,500 to $90,000 between initial reports and the formal presentation?</li>
-          </ol>
-
-          <h2 class="subsection-head" data-i18n="s5_workforce_head">Workforce &amp; Training</h2>
-          <ol class="doc-list" start="11">
-            <li data-i18n="q11">What is the plan to recruit 973 new workers per year from a market producing only 1,600 qualified graduates annually?</li>
-            <li data-i18n="q12">What partnerships exist with local school districts, community colleges, or workforce development boards?</li>
-            <li data-i18n="q13">What percentage of the projected workforce is expected to be Cameron County residents?</li>
-          </ol>
-
-          <h2 class="subsection-head" data-i18n="s5_water_head">Water &amp; Infrastructure</h2>
-          <ol class="doc-list" start="14">
-            <li data-i18n="q14">What is the projected daily water consumption at full buildout?</li>
-            <li data-i18n="q15">What is the source of this water?</li>
-            <li data-i18n="q16">What infrastructure upgrades are required, and at what cost?</li>
-            <li data-i18n="q17">What share of these costs will the company pay?</li>
-            <li data-i18n="q18">What is the contingency plan if the region enters mandatory water rationing?</li>
-          </ol>
-
-          <h2 class="subsection-head" data-i18n="s5_finance_head">Finances &amp; Governance</h2>
-          <ol class="doc-list" start="19">
-            <li data-i18n="q19">Provide copies of any pitch deck or financial model used to justify the $7.5B valuation.</li>
-            <li data-i18n="q20">What is the plan to achieve profitability, and in what year does the company project becoming cash-flow positive?</li>
-            <li data-i18n="q21">What automatic, non-negotiable clawback penalties will the company accept for failure to meet Phase 1 commitments?</li>
-          </ol>
-        </div>
-      </article>
-
-      <!-- SECTION 6 -->
-      <article id="section6" class="doc-section" aria-labelledby="s6-heading">
-        <div class="section-rule">
-          <span class="section-num">§6</span>
-          <span class="section-rule-label" data-i18n="s6_label">WHY THIS KEEPS HAPPENING</span>
-        </div>
-        <div class="doc-body">
-          <p data-i18n="s6_intro">If the incentive model is a documented failure, why does it persist? The answer lies not in economics but in the dynamics of power, psychology, and politics.</p>
-
-          <h2 class="subsection-head" data-i18n="s6_concentrated_head">Concentrated Benefits, Diffuse Costs</h2>
-          <p data-i18n="s6_concentrated_body">A $100 million tax break is concentrated in a single, highly motivated recipient. The cost is spread across thousands of taxpayers, each paying a little more, none feeling enough pain to organize against it. The system is structurally rigged in favor of the concentrated interest.</p>
-
-          <h2 class="subsection-head" data-i18n="s6_ribbon_head">The Symbolism of the Ribbon-Cutting</h2>
-          <p data-i18n="s6_ribbon_body">A politician at a new factory makes the evening news. A politician maintaining a water treatment plant does not. The incentive model rewards symbolic action over substantive governance.</p>
-
-          <h2 class="subsection-head" data-i18n="s6_industry_head">The Industry That Profits</h2>
-          <p data-i18n="s6_industry_body">An entire industry of site-selection consultants, bond lawyers, and economic development professionals makes its living from incentive deals. They provide the "analysis" that justifies the deals, creating a closed loop of self-serving logic.</p>
-
-          <h2 class="subsection-head" data-i18n="s6_shorterm_head">Short-Term Thinking</h2>
-          <p data-i18n="s6_shortterm_body">Elected officials operate on election cycles. The costs of an incentive deal take years or decades to materialize. The political credit from announcing a deal is immediate. The structure of political time is perfectly aligned with making bad long-term decisions.</p>
-
-          <div class="finding-box" role="note">
-            <div class="finding-box-label" data-i18n="solution_label">THE ANTIDOTE</div>
-            <p data-i18n="s6_antidote">Information. When communities understand the playbook, they can refuse to play their assigned role. When elected officials know the data, they can demand better terms. When citizens are equipped with the evidence, they can hold their representatives accountable. This document is a contribution to that effort.</p>
-          </div>
-        </div>
-      </article>
-
-      <!-- SECTION 7 -->
-      <article id="section7" class="doc-section" aria-labelledby="s7-heading">
-        <div class="section-rule">
-          <span class="section-num">§7</span>
-          <span class="section-rule-label" data-i18n="s7_label">A SUGGESTED PUBLIC STATEMENT</span>
-        </div>
-        <div class="doc-body">
-          <p data-i18n="s7_intro">Any jurisdiction facing a high-pressure incentive negotiation may wish to communicate the following:</p>
-          <blockquote class="doc-quote statement-quote" data-i18n="s7_statement">"We have reviewed the proposal. We have reviewed the scientific evidence. We have reviewed the historical record. We are not going to participate in an auction that pits communities against each other for the benefit of private investors. We are prepared to negotiate a fair, transparent, and enforceable agreement. If the company can meet these conditions — verifiable contracts, binding job commitments with automatic clawbacks, a full wage distribution, and an independent cost-benefit analysis — we welcome further discussion. If the company prefers to expand without these conditions, we wish them well. Our obligation is to the people we serve, not to the investors of any private firm."</blockquote>
-        </div>
-      </article>
-
-      <!-- FINAL WORD -->
-      <article id="final-word" class="doc-section" aria-labelledby="final-heading">
-        <div class="section-rule">
-          <span class="section-rule-label" data-i18n="final_label">A FINAL WORD</span>
-        </div>
-        <div class="doc-body">
-          <p data-i18n="final_p1">The company asking for your money has raised $2.5 billion from investors. It is valued at $7.5 billion. It already owns an operating shipyard in another state. It is run by a private equity professional whose career has been spent extracting value for investors.</p>
-          <p data-i18n="final_p2">I am a disabled veteran. I built the analytical system that produced this research with $396,000 of my own money over more than a decade. I have no financial interest in the outcome of this vote.</p>
-          <p data-i18n="final_p3">You do not need their money. They need your land, your port, your workforce, and your tax base. The question is not whether you can afford to say no. The question is whether you can afford to say yes on the terms they have offered.</p>
-          <p class="final-statement" data-i18n="final_statement">The evidence is in. The math is done. The decision is yours.</p>
-        </div>
-      </article>
-
-    </main>
+  <!-- Disclosure -->
+  <div class="disclosure-block" role="note" aria-label="Disclosure statement">
+    <div class="disclosure-label" data-i18n-idx="disclosure_head">Independence &amp; Disclosure</div>
+    <p class="disclosure-text" data-i18n-idx="disclosure_body">
+      Brasidas Strategies has no financial interest in any subject covered by its publications, no client relationship with any party to any transaction analyzed, and no affiliation with any economic development organization, lobbying firm, or government agency. All research is conducted independently and released as open-source public interest material. No compensation is received for any publication.
+    </p>
   </div>
 
-  <!-- FOOTER -->
-  <footer class="site-footer" role="contentinfo">
-    <div class="footer-inner">
-      <div class="footer-main">
-        <div class="footer-org">
-          <div class="footer-author-name">Arnoldo Alonso</div>
-          <div class="footer-org-name" data-i18n="footer_org">Founder, Brasidas Strategies</div>
-        </div>
-        <div class="footer-contact-block">
-          <div><a href="https://t.me/alonsobrx" class="footer-link" target="_blank" rel="noopener">Telegram @alonsobrx</a></div>
-        </div>
-        <div class="footer-ayala-block">
-          <div class="footer-ayala-label" data-i18n="footer_ayala_label">Prepared with assistance of</div>
-          <div class="footer-ayala-name">Ayala™ — Neurointelligence Agent</div>
-          <div class="footer-investment" data-i18n="footer_investment">Total investment in Ayala™ since 2014: $396,000</div>
-        </div>
-      </div>
-      <div class="footer-rule"></div>
-      <div class="footer-bottom">
-        <span data-i18n="footer_classification">Open Source — Public Interest &amp; Educational Use</span>
-        <span class="footer-sep">·</span>
-        <span data-i18n="footer_reproduce">This document may be freely reproduced, distributed, and adapted.</span>
-        <span class="footer-sep">·</span>
-        <span data-i18n="footer_date">June 2026</span>
-      </div>
-      <div class="footer-sources">
-        <span class="footer-sources-label" data-i18n="footer_sources_label">Key sources:</span>
-        <a href="https://sacra.com/c/saronic/" class="footer-src-link" target="_blank" rel="noopener">Sacra</a>
-        <a href="https://hypersinc.com/article/saronic-wins-392m-navy-contract-for-autonomous-surface-vessels-1778360505450" class="footer-src-link" target="_blank" rel="noopener">HyperSinc</a>
-        <a href="https://dredgewire.com/a-proliferation-of-federal-contracts-transforms-louisiana-into-a-shipbuilding-powerhouse/" class="footer-src-link" target="_blank" rel="noopener">DredgeWire</a>
-        <a href="https://gcaptain.com/saronic-marauder-ship-or-boat/" class="footer-src-link" target="_blank" rel="noopener">gCaptain</a>
-        <a href="https://www.naval-technology.com/news/us-navy-musv-trials/" class="footer-src-link" target="_blank" rel="noopener">Naval Technology</a>
-        <a href="https://www.cnbc.com/2026/03/31/autonomous-boat-startup-saronic-raises-1point75-billion-.html" class="footer-src-link" target="_blank" rel="noopener">CNBC</a>
-        <a href="https://texasborderbusiness.com/brownsville-pub-ceo-says-diversification-key-to-water-future/" class="footer-src-link" target="_blank" rel="noopener">Texas Border Business</a>
-        <a href="https://www.krgv.com/news/cameron-county-tables-decision-on-tax-break-request-for-major-ai-shipbuilding-project/" class="footer-src-link" target="_blank" rel="noopener">KRGV</a>
-      </div>
-    </div>
-  </footer>
+</main>
 
-  <script src="script.js"></script>
+<!-- ══ FOOTER ══ -->
+<footer class="index-footer" role="contentinfo">
+  <div class="index-footer-inner">
+    <span>© 2026 Arnoldo Alonso · Brasidas Strategies</span>
+    <span data-i18n-idx="footer_license">Open Source — Public Interest &amp; Educational Use</span>
+    <span><a href="https://t.me/alonsobrx" target="_blank" rel="noopener">Telegram @alonsobrx</a></span>
+  </div>
+</footer>
+
+<script>
+  // ── Bilingual content for index page ──
+  const IDX = {
+    en: {
+      toolbar_label: 'Brasidas Strategies — Public Research',
+      org_label: 'Brasidas Strategies · Public Interest Research',
+      hero_title: 'PUBLICATIONS',
+      hero_subtitle: 'Independent open-source research for communities, veterans, and the public record. Every claim sourced. Every calculation shown.',
+      author_role: 'Founder, Brasidas Strategies · System Architect, Ayala™',
+      section_reports: 'Intelligence Reports',
+      type_intel: 'Intelligence Report · Public Interest',
+      r001_title: 'The People\'s Brief: Saronic Technologies & Port Alpha',
+      r001_desc: 'A full mathematical and structural deconstruction of the $852M tax abatement request submitted to Cameron County, Texas by Saronic Technologies. Covers scale feasibility, revenue gap analysis, historical precedent, and the 21 questions every elected official must answer before voting.',
+      r001_lang: 'English / Español',
+      badge_live: 'Live',
+      r002_title: 'Next Report',
+      r002_desc: 'Future public interest analysis. Submit a tip or request via Telegram.',
+      r002_date: 'Forthcoming',
+      badge_soon: 'Forthcoming',
+      about_head: 'About This Work',
+      about_body: 'This research is produced by <strong>Brasidas Strategies</strong>, an independent research operation founded by Arnoldo Alonso. All analysis is powered by <strong>Ayala™</strong> — a proprietary neurointelligence research system developed over more than a decade. Publications are released free of charge for public use, distribution, and adaptation.',
+      mission_head: 'Mission',
+      mission_body: 'The goal is mass education. To give ordinary people the same analytical tools used by investors, lobbyists, and policy professionals — and to apply those tools in the public interest. Knowledge is the only antidote to extraction.',
+      disclosure_head: 'Independence & Disclosure',
+      disclosure_body: 'Brasidas Strategies has no financial interest in any subject covered by its publications, no client relationship with any party to any transaction analyzed, and no affiliation with any economic development organization, lobbying firm, or government agency. All research is conducted independently and released as open-source public interest material. No compensation is received for any publication.',
+      footer_license: 'Open Source — Public Interest & Educational Use',
+    },
+    es: {
+      toolbar_label: 'Brasidas Strategies — Investigación Pública',
+      org_label: 'Brasidas Strategies · Investigación de Interés Público',
+      hero_title: 'PUBLICACIONES',
+      hero_subtitle: 'Investigación independiente de código abierto para comunidades, veteranos y el registro público. Cada afirmación documentada. Cada cálculo mostrado.',
+      author_role: 'Fundador, Brasidas Strategies · Arquitecto de Sistemas, Ayala™',
+      section_reports: 'Informes de Inteligencia',
+      type_intel: 'Informe de Inteligencia · Interés Público',
+      r001_title: 'El Resumen del Pueblo: Saronic Technologies y Puerto Alpha',
+      r001_desc: 'Una deconstrucción matemática y estructural completa de la solicitud de exención fiscal de $852M presentada al Condado de Cameron, Texas por Saronic Technologies. Cubre la viabilidad de escala, análisis de brecha de ingresos, precedentes históricos y las 21 preguntas que todo funcionario electo debe responder antes de votar.',
+      r001_lang: 'English / Español',
+      badge_live: 'Publicado',
+      r002_title: 'Próximo Informe',
+      r002_desc: 'Análisis futuro de interés público. Envía una pista o solicitud por Telegram.',
+      r002_date: 'Próximamente',
+      badge_soon: 'Próximamente',
+      about_head: 'Sobre Este Trabajo',
+      about_body: 'Esta investigación es producida por <strong>Brasidas Strategies</strong>, una operación de investigación independiente fundada por Arnoldo Alonso. Todo el análisis está impulsado por <strong>Ayala™</strong> — un sistema de neurointeligencia propietario desarrollado durante más de una década. Las publicaciones se lanzan gratuitamente para uso público, distribución y adaptación.',
+      mission_head: 'Misión',
+      mission_body: 'El objetivo es la educación masiva. Dar a las personas ordinarias las mismas herramientas analíticas que usan los inversores, cabilderos y profesionales de políticas — y aplicar esas herramientas en el interés público. El conocimiento es el único antídoto para la extracción.',
+      disclosure_head: 'Independencia y Divulgación',
+      disclosure_body: 'Brasidas Strategies no tiene ningún interés financiero en ningún tema cubierto por sus publicaciones, ninguna relación de cliente con ninguna parte de ninguna transacción analizada, y ninguna afiliación con ninguna organización de desarrollo económico, firma de cabildeo o agencia gubernamental. Toda investigación se lleva a cabo de forma independiente y se publica como material de interés público de código abierto. No se recibe compensación por ninguna publicación.',
+      footer_license: 'Fuente Abierta — Interés Público y Uso Educativo',
+    }
+  };
+
+  let currentLangIdx = 'en';
+
+  function applyLangIndex(lang) {
+    document.documentElement.setAttribute('lang', lang);
+    const d = IDX[lang];
+    document.querySelectorAll('[data-i18n-idx]').forEach(el => {
+      const key = el.getAttribute('data-i18n-idx');
+      if (d[key] !== undefined) el.innerHTML = d[key];
+    });
+    const btn = document.getElementById('langToggleIdx');
+    btn.textContent = lang === 'en' ? 'ES →' : 'EN →';
+    btn.setAttribute('aria-label', lang === 'en' ? 'Cambiar a Español' : 'Switch to English');
+  }
+
+  function toggleLangIndex() {
+    currentLangIdx = currentLangIdx === 'en' ? 'es' : 'en';
+    applyLangIndex(currentLangIdx);
+  }
+
+  // Init
+  applyLangIndex('en');
+</script>
 </body>
 </html>
