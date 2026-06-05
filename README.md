@@ -19,12 +19,3 @@ This is the single public founder-architect repository for my GitHub presence. I
 ## Contact
 
 - Telegram: [t.me/alonsobrx](https://t.me/alonsobrx)
-- GitHub: [github.com/alonsobrx](https://github.com/alonsobrx)
-
-## Rights
-
-Biographical, narrative, strategic, and project-identifying content is reserved by Arnoldo Alonso and Brasidas Strategies. Public code may be reviewed for educational reference with attribution.
-
----
-
-**Independent. Accessible. Mission-built.**
