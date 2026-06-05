@@ -8,14 +8,5 @@ My engineering portfolio includes Ayala, a neurointelligent claims-preparation e
 
 My mission is to build technology that protects disabled veterans, strengthens working families, and restores technological sovereignty for communities historically excluded from advanced systems. I focus on engineering that is replicable, auditable, and grounded in real-world constraints rather than theoretical idealism. Every project I build is designed to be durable, accessible, and aligned with the ethical responsibilities of public service.
 
-## Repository
-
-This is the single public founder-architect repository for my GitHub presence. It supports a clean public profile and static founder site using plain HTML, CSS, and lightweight JavaScript. Accessibility, bilingual usability, keyboard navigation, and screen-reader compatibility are treated as primary requirements.
-
-## Live Site
-
-[alonsobrx.github.io/founder-architect](https://alonsobrx.github.io/founder-architect)
-
 ## Contact
-
-- Telegram: [t.me/alonsobrx](https://t.me/alonsobrx)
+Telegram: [t.me/alonsobrx](https://t.me/alonsobrx)
