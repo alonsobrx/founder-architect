@@ -1,6 +1,6 @@
 # Arnoldo Alonso
 
-**Founder-Architect · U.S. Army Combat Veteran · Former Deputy Sheriff · Data Scientist · Neurointelligent Systems Architect**
+**Founder-Architect · U.S. Army Combat Veteran former DWebb County Deputy She, Data Scientist, Neurointelligent Systems Architect**
 
 I am a U.S. Army combat veteran, former Deputy Sheriff, and neurointelligent-systems architect focused on sovereign, ethical, and constraint-aligned technology. My work centers on neuromorphic computing, offline autonomy, and accessibility engineering for visually and cognitively impaired users. I design systems that operate under duress, without cloud dependency, and with verifiable ethical boundaries for defense, governance, and disability justice.
 
