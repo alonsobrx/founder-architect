@@ -5,10 +5,7 @@
   const page = document.body.getAttribute('data-page') || 'home';
   const languageSwitch = document.documentElement.getAttribute('data-language-switch') || '';
   const socials = window.SITE_CONFIG?.socials || [
-    { label: 'GitHub', url: 'https://github.com/alonsobrx' },
-    { label: 'LinkedIn', url: 'https://www.linkedin.com/in/alonsobrx' },
-    { label: 'X', url: 'https://x.com/alonsobrx' },
-    { label: 'Telegram', url: 'https://t.me/alonsobrx' }
+    { label: 'LinkedIn', url: 'https://www.linkedin.com/in/alonsobrx' }
   ];
 
   const text = currentLanguage === 'es'
