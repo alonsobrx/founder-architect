@@ -1,6 +1,6 @@
 # Arnoldo A. Alonso
 
-Founder and senior consultant building accessible, evidence-driven systems at the intersection of neuromorphic computing, data science, disability adjudication, and public-interest technology.
+Co-founder and partner building accessible, evidence-driven systems at the intersection of neuromorphic computing, data science, disability adjudication, and public-interest technology.
 
 [Open the Founder-Architect website](https://alonsobrx.github.io/founder-architect/) · [Español](https://alonsobrx.github.io/founder-architect/es/) · [Site architecture](ARCHITECTURE.md)
 
@@ -40,10 +40,8 @@ I am a U.S. Army OIF/OND combat veteran and former Staff Sergeant (E-6). My work
 
 Project pages use explicit status labels so readers can distinguish operational work, active development, research, and planned systems.
 
-## Contact
+## Professional profile
 
 - [LinkedIn](https://www.linkedin.com/in/alonsobrx)
-- [X](https://x.com/alonsobrx)
-- [Telegram](https://t.me/alonsobrx)
 
 Based in the Rio Grande Valley, Texas. English and Spanish.
