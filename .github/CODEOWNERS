@@ -1,4 +1,16 @@
-# Observatory research, data, software, and publication control
+# Default publication owner. Add independent data, legal, accessibility,
+# Spanish-language, and security reviewers before the indexed release.
+* @alonsobrx
+
+# Security-sensitive repository controls
+/.github/ @alonsobrx
+/.gitignore @alonsobrx
+/SECURITY.md @alonsobrx
+
+# Observatory research, data, software, and publication controls
 /observatory/ @alonsobrx
+/observatory/data/ @alonsobrx
+/observatory/scripts/ @alonsobrx
+/observatory/index.html @alonsobrx
+/observatory/es/index.html @alonsobrx
 /publications.html @alonsobrx
-/.github/workflows/observatory-validate.yml @alonsobrx
