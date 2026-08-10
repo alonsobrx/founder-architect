@@ -16,7 +16,7 @@ The separate GitHub profile repository `alonsobrx/alonsobrx`, when created, shou
 | `/tools.html` | Systems, maturity labels, and boundaries | `/es/tools.html` |
 | `/publications.html` | Research standards and publications | `/es/publications.html` |
 | `/blog.html` | Corrections, outcomes, and field notes | `/es/blog.html` |
-| `/connect.html` | Verified social and professional links | `/es/connect.html` |
+| `/connect.html` | Verified LinkedIn profile and inquiry guidance | `/es/connect.html` |
 
 Long-form archival reports may remain in their original publication language. Their language and revision status must be stated explicitly.
 
@@ -97,16 +97,13 @@ Each translated page must include:
 
 Additional languages should be added as complete route sets only after qualified translation review. Machine-generated translations must not be presented as professionally reviewed translations.
 
-## Social-Link Governance
+## Professional-Link Governance
 
-Verified public links are centralized in `assets/config.js`. A new network is published only after its exact account URL is confirmed. The current verified set is:
+Verified professional links are centralized in `assets/config.js`. LinkedIn is intentionally the only external account promoted by the website:
 
-- GitHub: `https://github.com/alonsobrx`
 - LinkedIn: `https://www.linkedin.com/in/alonsobrx`
-- X: `https://x.com/alonsobrx`
-- Telegram: `https://t.me/alonsobrx`
 
-Facebook, Instagram, Threads, YouTube, Bluesky, Mastodon, Substack, and other services remain unpublished until their exact URLs are confirmed.
+Other social platforms remain unpublished to preserve a focused professional identity.
 
 ## Content Governance
 
@@ -127,7 +124,7 @@ Metrics must state their scope and date. Forecasts must be distinguished from ob
 - No analytics, advertising pixels, trackers, or third-party JavaScript.
 - No veteran records, medical information, credentials, access tokens, or private evidence in the public repository.
 - External fonts are optional; system-font fallbacks preserve the entire experience.
-- Social links use `rel="noopener"` when opening a new tab.
+- External professional links use `rel="noopener"` when opening a new tab.
 - No public contact form until a privacy notice, retention policy, abuse controls, and secure backend exist.
 
 ## Quality Gate
