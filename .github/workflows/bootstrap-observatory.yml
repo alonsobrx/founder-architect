@@ -1,0 +1,69 @@
+name: Bootstrap Veterans Benefits Observatory
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".bootstrap/observatory/**"
+      - ".github/workflows/bootstrap-observatory.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  install:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Reconstruct and verify release archive
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(find .bootstrap/observatory -maxdepth 1 -type f -name 'part-*' | wc -l)" -eq 9
+          cat .bootstrap/observatory/part-* | base64 --decode > /tmp/observatory-launch.tar.gz
+          echo "56f0b3c75f6f9e0080173a73b4a58b13efe920f30b8038fbd367f533badebba1  /tmp/observatory-launch.tar.gz" | sha256sum --check --strict
+
+      - name: Inspect archive paths
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import PurePosixPath
+          import tarfile
+
+          archive = "/tmp/observatory-launch.tar.gz"
+          with tarfile.open(archive, "r:gz") as bundle:
+              for member in bundle.getmembers():
+                  path = PurePosixPath(member.name)
+                  if path.is_absolute() or ".." in path.parts:
+                      raise SystemExit(f"Unsafe archive path: {member.name}")
+                  if member.issym() or member.islnk():
+                      raise SystemExit(f"Links are not allowed: {member.name}")
+          print("Archive path inspection passed.")
+          PY
+
+      - name: Install release and run deterministic validation
+        shell: bash
+        run: |
+          set -euo pipefail
+          tar -xzf /tmp/observatory-launch.tar.gz -C .
+          rm -rf .bootstrap/observatory
+          python -m py_compile observatory/scripts/recalculate_metrics.py observatory/scripts/validate_observatory.py
+          python observatory/scripts/recalculate_metrics.py --check
+          python observatory/scripts/validate_observatory.py
+
+      - name: Publish release to main
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No publication changes detected."
+            exit 0
+          fi
+          git commit -m "Launch Veterans Benefits Capacity and Due Process Observatory v0.1.0"
+          git push
