@@ -1,0 +1,21 @@
+{
+  "name": "founder-architect",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Accessible bilingual GitHub Pages portfolio for Arnoldo Alonso.",
+  "scripts": {
+    "check:js": "node --check assets/config.js && node --check assets/nav.js && node --check assets/site.js && node --check scripts/check-links.mjs",
+    "check:html": "html-validate index.html bio.html resume.html tools.html publications.html blog.html connect.html 'blog/**/*.html' 'es/**/*.html'",
+    "check:css": "stylelint assets/style.css",
+    "check:links": "node scripts/check-links.mjs",
+    "check": "npm run check:js && npm run check:html && npm run check:css && npm run check:links"
+  },
+  "devDependencies": {
+    "html-validate": "11.6.2",
+    "stylelint": "17.14.1",
+    "stylelint-config-standard": "40.0.0"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
