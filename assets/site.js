@@ -1,77 +1,44 @@
-/* Global language, theme, text-size, and read-aloud controls */
+/* Theme, text-size, read-aloud, reading progress, and archive controls. */
 
-const LANG = {
-  en: {
-    nav_brand: 'Arnoldo Alonso',
-    nav_home: 'Home',
-    nav_bio: 'Bio',
-    nav_resume: 'Background',
-    nav_tools: 'Systems',
-    nav_publications: 'Publications',
-    nav_blog: 'Blog',
-    nav_contact: 'Contact',
-    footer_copy: '© 2026 Arnoldo Alonso',
-    footer_standard: 'Accessible · Evidence driven · Public interest',
-    lang_btn: 'ES'
-  },
-  es: {
-    nav_brand: 'Arnoldo Alonso',
-    nav_home: 'Inicio',
-    nav_bio: 'Biografía',
-    nav_resume: 'Trayectoria',
-    nav_tools: 'Sistemas',
-    nav_publications: 'Publicaciones',
-    nav_blog: 'Blog',
-    nav_contact: 'Contacto',
-    footer_copy: '© 2026 Arnoldo Alonso',
-    footer_standard: 'Accesible · Basado en evidencia · Interés público',
-    lang_btn: 'EN'
-  }
-};
-
-let currentLang = localStorage.getItem('lang') === 'es' ? 'es' : 'en';
-let darkMode = localStorage.getItem('dark') === 'true';
+const pageLanguage = document.documentElement.lang.toLowerCase().startsWith('es') ? 'es' : 'en';
+let lightMode = localStorage.getItem('theme') === 'light';
 let speechActive = false;
 
-function applyLang(lang) {
-  const selected = LANG[lang] ? lang : 'en';
-  currentLang = selected;
-  localStorage.setItem('lang', selected);
-  document.documentElement.setAttribute('lang', selected);
+const UI_TEXT = pageLanguage === 'es'
+  ? {
+      dark: 'Oscuro',
+      light: 'Claro',
+      useDark: 'Usar tema oscuro',
+      useLight: 'Usar tema claro',
+      read: 'Leer',
+      stop: 'Detener',
+      readLabel: 'Leer el contenido principal en voz alta',
+      stopLabel: 'Detener la lectura en voz alta',
+      unsupported: 'La lectura en voz alta no está disponible en este navegador'
+    }
+  : {
+      dark: 'Dark',
+      light: 'Light',
+      useDark: 'Use dark color theme',
+      useLight: 'Use light color theme',
+      read: 'Read',
+      stop: 'Stop',
+      readLabel: 'Read main content aloud',
+      stopLabel: 'Stop reading aloud',
+      unsupported: 'Read aloud is not supported by this browser'
+    };
 
-  document.querySelectorAll('[data-i18n]').forEach((element) => {
-    const key = element.getAttribute('data-i18n');
-    if (LANG[selected][key] !== undefined) element.textContent = LANG[selected][key];
-  });
+function applyTheme(useLight) {
+  lightMode = Boolean(useLight);
+  localStorage.setItem('theme', lightMode ? 'light' : 'dark');
+  document.body.classList.toggle('light', lightMode);
 
-  const languageButton = document.getElementById('langBtn');
-  if (languageButton) {
-    languageButton.setAttribute('aria-pressed', String(selected === 'es'));
-    languageButton.setAttribute('aria-label', selected === 'en' ? 'Cambiar a español' : 'Switch to English');
-  }
-
-  document.dispatchEvent(new CustomEvent('site:language-change', { detail: { lang: selected } }));
-}
-
-function toggleLang() {
-  applyLang(currentLang === 'en' ? 'es' : 'en');
-}
-
-function applyDark(on) {
-  darkMode = Boolean(on);
-  localStorage.setItem('dark', String(darkMode));
-  document.body.classList.toggle('dark', darkMode);
-
-  const button = document.getElementById('darkBtn');
+  const button = document.getElementById('themeBtn');
   if (button) {
-    button.textContent = darkMode ? 'Light' : 'Dark';
-    button.setAttribute('aria-pressed', String(darkMode));
-    button.setAttribute('aria-label', darkMode ? 'Use light color theme' : 'Use dark color theme');
+    button.textContent = lightMode ? UI_TEXT.dark : UI_TEXT.light;
+    button.setAttribute('aria-pressed', String(lightMode));
+    button.setAttribute('aria-label', lightMode ? UI_TEXT.useDark : UI_TEXT.useLight);
   }
-}
-
-function toggleDark() {
-  applyDark(!darkMode);
 }
 
 function setFontSize(size) {
@@ -80,23 +47,13 @@ function setFontSize(size) {
   localStorage.setItem('fontSize', String(bounded));
 }
 
-function increaseFontSize() {
-  const current = parseFloat(getComputedStyle(document.documentElement).fontSize);
-  setFontSize(current + 2);
-}
-
-function decreaseFontSize() {
-  const current = parseFloat(getComputedStyle(document.documentElement).fontSize);
-  setFontSize(current - 2);
-}
-
 function updateReadButton(active) {
   speechActive = active;
   const button = document.getElementById('readBtn');
   if (!button) return;
-  button.textContent = active ? 'Stop' : 'Read';
+  button.textContent = active ? UI_TEXT.stop : UI_TEXT.read;
   button.setAttribute('aria-pressed', String(active));
-  button.setAttribute('aria-label', active ? 'Stop reading aloud' : 'Read main content aloud');
+  button.setAttribute('aria-label', active ? UI_TEXT.stopLabel : UI_TEXT.readLabel);
 }
 
 function readAloud() {
@@ -104,7 +61,7 @@ function readAloud() {
     const button = document.getElementById('readBtn');
     if (button) {
       button.disabled = true;
-      button.setAttribute('aria-label', 'Read aloud is not supported by this browser');
+      button.setAttribute('aria-label', UI_TEXT.unsupported);
     }
     return;
   }
@@ -119,7 +76,7 @@ function readAloud() {
   if (!main) return;
 
   const utterance = new SpeechSynthesisUtterance(main.innerText);
-  utterance.lang = currentLang === 'es' ? 'es-US' : 'en-US';
+  utterance.lang = pageLanguage === 'es' ? 'es-US' : 'en-US';
   utterance.onend = () => updateReadButton(false);
   utterance.onerror = () => updateReadButton(false);
   updateReadButton(true);
@@ -138,45 +95,52 @@ function updateReadingProgress() {
   progress.setAttribute('aria-valuenow', String(Math.round(percent)));
 }
 
+function addArchiveNotice() {
+  const archivedReport = document.querySelector('.main-content .doc-section');
+  const reportMain = document.querySelector('.main-content');
+  if (!archivedReport || !reportMain || document.querySelector('.archive-notice')) return;
+
+  const notice = document.createElement('aside');
+  notice.className = 'archive-notice';
+  notice.setAttribute('role', 'note');
+  notice.innerHTML = '<strong>Archive notice, August 10, 2026:</strong> This pre-vote brief predates Cameron County approval on June 16 and Saronic\'s July site-selection announcement. Some financial figures conflict with later public reporting and require review against the executed agreements. Read the <a href="../blog/saronic-vote-june16.html">current outcome update</a> before relying on this draft.';
+  reportMain.insertBefore(notice, archivedReport);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   const storedFontSize = Number(localStorage.getItem('fontSize'));
   if (Number.isFinite(storedFontSize) && storedFontSize >= 14 && storedFontSize <= 24) {
     setFontSize(storedFontSize);
   }
 
-  applyLang(currentLang);
-  applyDark(darkMode);
-
-  document.getElementById('langBtn')?.addEventListener('click', toggleLang);
-  document.getElementById('darkBtn')?.addEventListener('click', toggleDark);
-  document.getElementById('fontDownBtn')?.addEventListener('click', decreaseFontSize);
-  document.getElementById('fontUpBtn')?.addEventListener('click', increaseFontSize);
+  applyTheme(lightMode);
+  document.getElementById('themeBtn')?.addEventListener('click', () => applyTheme(!lightMode));
+  document.getElementById('fontDownBtn')?.addEventListener('click', () => {
+    setFontSize(parseFloat(getComputedStyle(document.documentElement).fontSize) - 2);
+  });
+  document.getElementById('fontUpBtn')?.addEventListener('click', () => {
+    setFontSize(parseFloat(getComputedStyle(document.documentElement).fontSize) + 2);
+  });
   document.getElementById('readBtn')?.addEventListener('click', readAloud);
 
   const reportLanguageButton = document.getElementById('lang-toggle');
   if (reportLanguageButton) {
     reportLanguageButton.disabled = true;
     reportLanguageButton.textContent = 'EN';
-    reportLanguageButton.setAttribute('aria-label', 'This report is currently available in English');
+    reportLanguageButton.setAttribute('aria-label', 'This archived report is currently available in English');
   }
-
-  const archivedReport = document.querySelector('.main-content .doc-section');
-  const reportMain = document.querySelector('.main-content');
-  if (archivedReport && reportMain && !document.querySelector('.archive-notice')) {
-    const notice = document.createElement('aside');
-    notice.className = 'archive-notice';
-    notice.setAttribute('role', 'note');
-    notice.innerHTML = '<strong>Archive notice, August 10, 2026:</strong> This pre-vote brief predates Cameron County approval on June 16 and Saronic\'s July site-selection announcement. Some financial figures conflict with later public reporting and require review against the executed agreements. Read the <a href="../blog/saronic-vote-june16.html">current outcome update</a> before relying on this draft.';
-    reportMain.insertBefore(notice, archivedReport);
-  }
-
-  document.getElementById('contrast-btn')?.addEventListener('click', toggleDark);
-  document.getElementById('font-down')?.addEventListener('click', decreaseFontSize);
-  document.getElementById('font-up')?.addEventListener('click', increaseFontSize);
+  document.getElementById('contrast-btn')?.addEventListener('click', () => applyTheme(!lightMode));
+  document.getElementById('font-down')?.addEventListener('click', () => {
+    setFontSize(parseFloat(getComputedStyle(document.documentElement).fontSize) - 2);
+  });
+  document.getElementById('font-up')?.addEventListener('click', () => {
+    setFontSize(parseFloat(getComputedStyle(document.documentElement).fontSize) + 2);
+  });
   document.getElementById('read-btn')?.addEventListener('click', readAloud);
 
   window.addEventListener('scroll', updateReadingProgress, { passive: true });
   updateReadingProgress();
+  addArchiveNotice();
 });
 
 window.addEventListener('beforeunload', () => {
