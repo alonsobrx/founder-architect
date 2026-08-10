@@ -1,0 +1,34 @@
+name: Observatory validation
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "observatory/**"
+      - ".github/workflows/observatory-validate.yml"
+  pull_request:
+    paths:
+      - "observatory/**"
+      - ".github/workflows/observatory-validate.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Compile and validate
+        run: |
+          python -m py_compile observatory/scripts/recalculate_metrics.py observatory/scripts/validate_observatory.py
+          python observatory/scripts/recalculate_metrics.py --check
+          python observatory/scripts/validate_observatory.py
