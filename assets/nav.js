@@ -1,52 +1,107 @@
-/* Shared navigation and footer */
+/* Shared navigation and footer for English and Spanish static pages. */
 (function () {
   const root = document.documentElement.getAttribute('data-root') || '';
-  const languageControl = document.body.getAttribute('data-bilingual') === 'true'
-    ? '<button type="button" class="util-btn primary" id="langBtn" aria-label="Cambiar a español" aria-pressed="false" data-i18n="lang_btn">ES</button>'
+  const currentLanguage = document.documentElement.lang.toLowerCase().startsWith('es') ? 'es' : 'en';
+  const page = document.body.getAttribute('data-page') || 'home';
+  const languageSwitch = document.documentElement.getAttribute('data-language-switch') || '';
+  const socials = window.SITE_CONFIG?.socials || [
+    { label: 'GitHub', url: 'https://github.com/alonsobrx' },
+    { label: 'LinkedIn', url: 'https://www.linkedin.com/in/alonsobrx' },
+    { label: 'X', url: 'https://x.com/alonsobrx' },
+    { label: 'Telegram', url: 'https://t.me/alonsobrx' }
+  ];
+
+  const text = currentLanguage === 'es'
+    ? {
+        skip: 'Saltar al contenido principal',
+        home: 'Inicio',
+        bio: 'Biografía',
+        background: 'Trayectoria',
+        systems: 'Sistemas',
+        publications: 'Publicaciones',
+        updates: 'Actualizaciones',
+        connect: 'Conectar',
+        language: 'EN',
+        languageLabel: 'View this page in English',
+        theme: 'Tema',
+        themeLabel: 'Cambiar tema de color',
+        smaller: 'A−',
+        smallerLabel: 'Disminuir el tamaño del texto',
+        larger: 'A+',
+        largerLabel: 'Aumentar el tamaño del texto',
+        read: 'Leer',
+        readLabel: 'Leer el contenido principal en voz alta',
+        footer: 'Accesible · Basado en evidencia · Interés público',
+        links: 'Enlaces profesionales'
+      }
+    : {
+        skip: 'Skip to main content',
+        home: 'Home',
+        bio: 'Bio',
+        background: 'Background',
+        systems: 'Systems',
+        publications: 'Publications',
+        updates: 'Updates',
+        connect: 'Connect',
+        language: 'ES',
+        languageLabel: 'Ver esta página en español',
+        theme: 'Theme',
+        themeLabel: 'Change color theme',
+        smaller: 'A−',
+        smallerLabel: 'Decrease text size',
+        larger: 'A+',
+        largerLabel: 'Increase text size',
+        read: 'Read',
+        readLabel: 'Read main content aloud',
+        footer: 'Accessible · Evidence driven · Public interest',
+        links: 'Professional links'
+      };
+
+  const languageBase = currentLanguage === 'es' ? `${root}es/` : root;
+  const navItems = [
+    { id: 'home', label: text.home, href: `${languageBase}index.html` },
+    { id: 'bio', label: text.bio, href: `${languageBase}bio.html` },
+    { id: 'resume', label: text.background, href: `${languageBase}resume.html` },
+    { id: 'tools', label: text.systems, href: `${languageBase}tools.html` },
+    { id: 'publications', label: text.publications, href: `${languageBase}publications.html` },
+    { id: 'blog', label: text.updates, href: `${languageBase}blog.html` },
+    { id: 'connect', label: text.connect, href: `${languageBase}connect.html` }
+  ];
+
+  const navLinks = navItems.map((item) => {
+    const active = item.id === page;
+    return `<a href="${item.href}" data-page="${item.id}"${active ? ' class="active" aria-current="page"' : ''}>${item.label}</a>`;
+  }).join('');
+
+  const languageLink = languageSwitch
+    ? `<a class="util-btn primary" href="${languageSwitch}" hreflang="${currentLanguage === 'es' ? 'en' : 'es'}" lang="${currentLanguage === 'es' ? 'en' : 'es'}" aria-label="${text.languageLabel}">${text.language}</a>`
     : '';
 
+  const socialLinks = socials.map((social) => (
+    `<a href="${social.url}" target="_blank" rel="noopener">${social.label}</a>`
+  )).join('');
+
   const navHTML = `
-    <a href="#main" class="skip-link">Skip to main content</a>
-    <div class="util-bar" aria-label="Display and language controls">
-      <a href="${root}index.html" class="util-brand" data-i18n="nav_brand" aria-label="Arnoldo Alonso home">Arnoldo Alonso</a>
-      ${languageControl}
-      <button type="button" class="util-btn" id="darkBtn" aria-label="Use dark color theme" aria-pressed="false">Dark</button>
-      <button type="button" class="util-btn" id="fontDownBtn" aria-label="Decrease text size">A−</button>
-      <button type="button" class="util-btn" id="fontUpBtn" aria-label="Increase text size">A+</button>
-      <button type="button" class="util-btn" id="readBtn" aria-label="Read main content aloud" aria-pressed="false">Read</button>
+    <a href="#main" class="skip-link">${text.skip}</a>
+    <div class="util-bar" aria-label="${currentLanguage === 'es' ? 'Controles de lectura y visualización' : 'Reading and display controls'}">
+      <a href="${languageBase}index.html" class="util-brand" aria-label="${currentLanguage === 'es' ? 'Página principal de Arnoldo Alonso' : 'Arnoldo Alonso home'}">Arnoldo Alonso</a>
+      ${languageLink}
+      <button type="button" class="util-btn" id="themeBtn" aria-label="${text.themeLabel}" aria-pressed="false">${text.theme}</button>
+      <button type="button" class="util-btn" id="fontDownBtn" aria-label="${text.smallerLabel}">${text.smaller}</button>
+      <button type="button" class="util-btn" id="fontUpBtn" aria-label="${text.largerLabel}">${text.larger}</button>
+      <button type="button" class="util-btn" id="readBtn" aria-label="${text.readLabel}" aria-pressed="false">${text.read}</button>
     </div>
-    <nav class="main-nav" aria-label="Main navigation">
-      <a href="${root}index.html" data-i18n="nav_home" data-page="bio">Home</a>
-      <a href="${root}bio.html" data-i18n="nav_bio">Bio</a>
-      <a href="${root}resume.html" data-i18n="nav_resume" data-page="resume">Background</a>
-      <a href="${root}tools.html" data-i18n="nav_tools" data-page="tools">Systems</a>
-      <a href="${root}publications.html" data-i18n="nav_publications" data-page="publications">Publications</a>
-      <a href="${root}blog.html" data-i18n="nav_blog" data-page="blog">Blog</a>
-      <a href="${root}contact.html" data-i18n="nav_contact" data-page="contact">Contact</a>
-    </nav>`;
+    <nav class="main-nav" aria-label="${currentLanguage === 'es' ? 'Navegación principal' : 'Main navigation'}">${navLinks}</nav>`;
 
   const footerHTML = `
     <footer class="site-footer">
       <div class="footer-in">
-        <span data-i18n="footer_copy">© 2026 Arnoldo Alonso</span>
-        <span data-i18n="footer_standard">Accessible · Evidence driven · Public interest</span>
-        <nav class="footer-links" aria-label="Professional links">
-          <a href="https://github.com/alonsobrx" target="_blank" rel="noopener">GitHub</a>
-          <a href="https://www.linkedin.com/in/alonsobrx" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="https://t.me/alonsobrx" target="_blank" rel="noopener">Telegram</a>
-        </nav>
+        <span>© 2026 Arnoldo Alonso</span>
+        <span>${text.footer}</span>
+        <nav class="footer-links" aria-label="${text.links}">${socialLinks}</nav>
       </div>
     </footer>`;
 
   document.body.insertAdjacentHTML('afterbegin', navHTML);
   document.body.insertAdjacentHTML('beforeend', footerHTML);
-
-  const page = document.body.getAttribute('data-page');
-  if (page) {
-    const activeLink = document.querySelector(`.main-nav a[data-page="${page}"]`);
-    if (activeLink) {
-      activeLink.classList.add('active');
-      activeLink.setAttribute('aria-current', 'page');
-    }
-  }
 })();
