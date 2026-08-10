@@ -2,6 +2,8 @@
 
 Founder and senior consultant building accessible, evidence-driven systems at the intersection of neuromorphic computing, data science, disability adjudication, and public-interest technology.
 
+[Open the Founder-Architect website](https://alonsobrx.github.io/founder-architect/) · [Español](https://alonsobrx.github.io/founder-architect/es/) · [Site architecture](ARCHITECTURE.md)
+
 I am a U.S. Army OIF/OND combat veteran and former Staff Sergeant (E-6). My work is shaped by military logistics, veteran advocacy, legal-medical systems, and lived experience with disability and accessibility barriers.
 
 ## Current work
@@ -32,6 +34,7 @@ I am a U.S. Army OIF/OND combat veteran and former Staff Sergeant (E-6). My work
 ## Public portfolio
 
 - [Founder-Architect portfolio](https://alonsobrx.github.io/founder-architect/)
+- [Biografía en español](https://alonsobrx.github.io/founder-architect/es/bio.html)
 - [Public-interest publications](https://alonsobrx.github.io/founder-architect/publications.html)
 - [Systems and research](https://alonsobrx.github.io/founder-architect/tools.html)
 
@@ -40,6 +43,7 @@ Project pages use explicit status labels so readers can distinguish operational 
 ## Contact
 
 - [LinkedIn](https://www.linkedin.com/in/alonsobrx)
+- [X](https://x.com/alonsobrx)
 - [Telegram](https://t.me/alonsobrx)
 
 Based in the Rio Grande Valley, Texas. English and Spanish.
