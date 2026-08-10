@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+title: Veterans Benefits Capacity and Due Process Observatory
+message: "Please cite this research preview using the metadata below."
+type: dataset
+authors:
+  - family-names: Alonso
+    given-names: Arnoldo A.
+version: 0.1.0
+date-released: 2026-08-10
+url: https://alonsobrx.github.io/founder-architect/observatory/
+repository-code: https://github.com/alonsobrx/founder-architect/tree/main/observatory
+license: CC-BY-4.0
+keywords:
+  - veterans benefits
+  - VA claims
+  - public administration
+  - due process
+  - artificial intelligence governance
+  - accessibility

@@ -1,0 +1,131 @@
+{
+  "version": "0.1.0",
+  "updated": "2026-08-10",
+  "sources": [
+    {
+      "id": "VA-CLAIMS-WEEKLY",
+      "title": "Detailed Claims Data",
+      "publisher": "U.S. Department of Veterans Affairs, Veterans Benefits Administration",
+      "publication_date": null,
+      "reporting_period": "Weekly status displayed August 10, 2026",
+      "retrieved": "2026-08-10",
+      "url": "https://benefits.va.gov/reports/detailed_claims_data.asp",
+      "location": "Claims Inventory, Claims Backlog, and Accuracy status reports",
+      "sha256": null,
+      "dynamic": true,
+      "used_for": [
+        "Current pending rating-bundle claims",
+        "Claims older than 125 days",
+        "Issue-level and claim-level accuracy"
+      ],
+      "limitations": "Dynamic page. Values change weekly. Claim-based accuracy is the share of sampled cases that were error-free; it is not a wrongful-denial rate."
+    },
+    {
+      "id": "VA-ABR-2025-COMP",
+      "title": "FY 2025 Annual Benefits Report: Compensation",
+      "publisher": "U.S. Department of Veterans Affairs, Veterans Benefits Administration",
+      "publication_date": "2026",
+      "reporting_period": "Fiscal year 2025; recipients as of September 30, 2025",
+      "retrieved": "2026-08-10",
+      "url": "https://www.benefits.va.gov/REPORTS/abr/docs/2025-compensation.pdf",
+      "location": "PDF pages 4, 5, 8, and 10",
+      "sha256": "b78b0ef4f76c82b5dec067ac7f54f48821f7b72626e15170561ca9877f13fd29",
+      "dynamic": false,
+      "used_for": [
+        "Veteran population",
+        "Compensation recipients",
+        "Service-connected disabilities",
+        "100-percent combined ratings"
+      ],
+      "limitations": "Counts recognized service-connected disabilities, not every condition claimed or experienced. Veteran population is based on VetPop2023."
+    },
+    {
+      "id": "VA-BUDGET-2027-BIB",
+      "title": "FY 2027 Congressional Submission: Budget in Brief",
+      "publisher": "U.S. Department of Veterans Affairs",
+      "publication_date": "2026-04",
+      "reporting_period": "FY 2025 actual, FY 2026 enacted/estimated, FY 2027 request",
+      "retrieved": "2026-08-10",
+      "url": "https://department.va.gov/wp-content/uploads/2026/04/2027-BiB.pdf",
+      "location": "PDF pages 1, 8, and 35\u201338",
+      "sha256": "83dba990470148f01f9090730ddac932a8809b12775f0fcf0a00c34b378ea09e",
+      "dynamic": false,
+      "used_for": [
+        "VA and VBA staffing",
+        "Board staffing and appeals projections",
+        "Budget totals"
+      ],
+      "limitations": "FY 2027 values are requested or projected, not enacted outcomes."
+    },
+    {
+      "id": "VA-BUDGET-2027-V3",
+      "title": "FY 2027 Congressional Submission, Volume III: Benefits and Burial Programs and Departmental Administration",
+      "publisher": "U.S. Department of Veterans Affairs",
+      "publication_date": "2026-04",
+      "reporting_period": "FY 2024\u20132027 workload and budget data",
+      "retrieved": "2026-08-10",
+      "url": "https://department.va.gov/wp-content/uploads/2026/04/Volume-3.pdf",
+      "location": "PDF pages 77\u201379 and 59\u201371",
+      "sha256": "0792f98b5038a3f1cb54aa8e857076ca098bfcf707250860ea3bcb89d23a0ead",
+      "dynamic": false,
+      "used_for": [
+        "Rating and non-rating receipts, production, and inventory",
+        "Automated Decision Support expansion",
+        "Direct-labor FTE context"
+      ],
+      "limitations": "Projected claims include PACT Act workload, while the direct-labor FTE table cited in the document excludes Toxic Exposures Fund FTE. This observatory therefore does not treat that table as a complete productivity denominator."
+    },
+    {
+      "id": "VA-AI-2025",
+      "title": "2025 VA AI Use Case Inventory",
+      "publisher": "U.S. Department of Veterans Affairs",
+      "publication_date": "2026-04 update",
+      "reporting_period": "Inventory current as of December 2025",
+      "retrieved": "2026-08-10",
+      "url": "https://department.va.gov/ai/wp-content/uploads/sites/26/2026/04/VA-AI-Use-Case-Inventory-2025-Web-Compliance-Updates.xlsx",
+      "location": "All Use Cases worksheet, rows 3\u2013369",
+      "sha256": "f6bfdb02859539de48aeba1003afda18bd0fa92223df33763bc872e292b8ad88",
+      "dynamic": false,
+      "used_for": [
+        "AI lifecycle counts",
+        "High-impact counts",
+        "VBA-specific AI registry"
+      ],
+      "limitations": "An inventory entry is a use case, not necessarily a unique software system. Lifecycle status must be considered; retired and pre-deployment entries are not running production systems."
+    },
+    {
+      "id": "GAO-25-107211",
+      "title": "Veterans Benefits: More Thorough Planning Needed to Help Better Protect Veterans Assisted by Representatives",
+      "publisher": "U.S. Government Accountability Office",
+      "publication_date": "2025-03-28",
+      "reporting_period": "Data primarily through November 2024",
+      "retrieved": "2026-08-10",
+      "url": "https://www.gao.gov/assets/gao-25-107211.pdf",
+      "location": "Report pages addressing representative counts and ADF workforce resources",
+      "sha256": "ef8d2a30cf96b996a2bb1c9a726696c56243ee3ff5f219fd7d6d1c159c6f8db2",
+      "dynamic": false,
+      "used_for": [
+        "Accredited representative counts",
+        "Claims-agent application backlog",
+        "ADF staffing"
+      ],
+      "limitations": "Accreditation does not establish active practice, new-client availability, caseload, language capacity, geography, or accessibility capability."
+    },
+    {
+      "id": "WCAG-22",
+      "title": "Web Content Accessibility Guidelines (WCAG) 2.2",
+      "publisher": "World Wide Web Consortium",
+      "publication_date": "2023-10-05",
+      "reporting_period": "Current Recommendation",
+      "retrieved": "2026-08-10",
+      "url": "https://www.w3.org/TR/WCAG22/",
+      "location": "W3C Recommendation",
+      "sha256": null,
+      "dynamic": true,
+      "used_for": [
+        "Accessibility target and testing protocol"
+      ],
+      "limitations": "This project targets WCAG 2.2 AA. Automated tests alone cannot establish full conformance."
+    }
+  ]
+}

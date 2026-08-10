@@ -1,12 +1,37 @@
-# Arnoldo Alonso
+# Arnoldo A. Alonso
 
-**Founder-Architect · U.S. Army Combat Veteran former DWebb County Deputy She, Data Scientist, Neurointelligent Systems Architect**
+**Founder-Architect · U.S. Army Combat Veteran · Data Scientist · Neuromorphic Computing Engineer**
 
-I am a U.S. Army combat veteran, former Deputy Sheriff, and neurointelligent-systems architect focused on sovereign, ethical, and constraint-aligned technology. My work centers on neuromorphic computing, offline autonomy, and accessibility engineering for visually and cognitively impaired users. I design systems that operate under duress, without cloud dependency, and with verifiable ethical boundaries for defense, governance, and disability justice.
+I build accessible, auditable systems at the intersection of public administration, disability justice, data science, economics, and neuromorphic computing. My work is shaped by military logistics, veteran advocacy, legal-medical systems analysis, and the practical requirements of blind and visually impaired users.
 
-My engineering portfolio includes Ayala, a neurointelligent claims-preparation engine, along with additional architectures focused on ethical command, sovereign intelligence, and dual-use manufacturing. These systems are built to function in degraded environments, support disabled users, and reinforce institutional integrity through transparency, constraint, and measurable accountability. I specialize in building high-assurance systems that remain stable under pressure and resilient in adversarial or resource-limited conditions.
+I am the founder of Brasidas Strategies and the principal architect of Ayala. Public repositories are used for reproducible research, accessibility-first software, and institutional analysis. Confidential veteran records, proprietary Ayala logic, credentials, and patent-sensitive materials do not belong in public source control.
 
-My mission is to build technology that protects disabled veterans, strengthens working families, and restores technological sovereignty for communities historically excluded from advanced systems. I focus on engineering that is replicable, auditable, and grounded in real-world constraints rather than theoretical idealism. Every project I build is designed to be durable, accessible, and aligned with the ethical responsibilities of public service.
+## Flagship public research
 
-## Contact
-Telegram: [t.me/alonsobrx](https://t.me/alonsobrx)
+### Veterans Benefits Capacity and Due Process Observatory
+
+A bilingual, accessible, reproducible analysis of VA claims workload, appeals, accredited representation, workforce capacity, and artificial-intelligence governance.
+
+- [Live English publication](https://alonsobrx.github.io/founder-architect/observatory/)
+- [Publicación en español](https://alonsobrx.github.io/founder-architect/observatory/es/)
+- [Source, data, methodology, and validation](observatory/)
+
+### The People's Brief: Saronic Technologies and Port Alpha
+
+A public-interest analysis of a major Cameron County economic-development proposal, including mathematical assumptions, fiscal exposure, historical comparisons, and questions for public officials.
+
+- [Read the publication](https://alonsobrx.github.io/founder-architect/reports/saronic-port-alpha.html)
+
+## Engineering and research standards
+
+- Accessible HTML is the authoritative publication format.
+- Official facts, calculations, scenarios, and unknowns are labeled separately.
+- Material claims must identify their source, date, unit, denominator, and limitation.
+- Public systems must not expose veteran medical, claim, identity, or authentication data.
+- Corrections are documented through version history rather than silently overwritten.
+
+## Public profile
+
+- [Founder-Architect website](https://alonsobrx.github.io/founder-architect/)
+- [Publications](https://alonsobrx.github.io/founder-architect/publications.html)
+- [LinkedIn](https://www.linkedin.com/in/alonsobrx)

@@ -1,0 +1,32 @@
+{
+  "version": "0.1.0",
+  "updated": "2026-08-10",
+  "capacity_model": {
+    "formula": "required_capacity = annual_receipts / target_utilization + dedicated_annual_inventory_reduction",
+    "additional_capacity": "max(0, required_capacity - planned_production)",
+    "additional_fte": "ceil(additional_capacity / marginal_matters_per_fte)",
+    "annual_cost": "additional_fte * loaded_cost_per_fte",
+    "notes": [
+      "Target utilization is a policy scenario, not a VA-published standard.",
+      "Dedicated inventory reduction is added beyond the reserve implied by target utilization.",
+      "Marginal productivity and loaded cost are editable scenario assumptions, not official VA values.",
+      "The model estimates case-processing-equivalent capacity; it does not assign occupational series or organizational placement."
+    ]
+  },
+  "claimant_side_model": {
+    "formula": "professionals = ceil(rating_receipts * intensive_share / intensive_matters_per_professional)",
+    "annual_cost": "professionals * loaded_cost_per_professional",
+    "notes": [
+      "This is a planning scenario for complex matters, not a count of veterans legally entitled to counsel.",
+      "The workforce may include accredited VSO personnel, attorneys, claims agents, paralegals, medical-evidence coordinators, and accessibility or language specialists under appropriate supervision."
+    ]
+  },
+  "board_model": {
+    "productivity_basis": "FY2025 Board decisions divided by FY2025 Board FTE",
+    "formula": "required_fte = ceil((annual_receipts + desired_annual_inventory_reduction) / observed_decisions_per_fte)",
+    "notes": [
+      "The model assumes FY2025 average output per FTE can be sustained; case mix and workforce composition may change.",
+      "It is a reproducible sensitivity calculation, not an official staffing determination."
+    ]
+  }
+}

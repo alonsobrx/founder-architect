@@ -1,0 +1,56 @@
+name: Observatory data or methodology correction
+description: Report a source, definition, calculation, classification, or interpretation problem.
+title: "[Observatory correction]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not submit medical records, VA file numbers, Social Security numbers, addresses, signatures, credentials, or confidential claim information.
+  - type: input
+    id: statement
+    attributes:
+      label: Disputed statement, metric, or calculation
+      description: Identify the exact page section, table row, metric key, or sentence.
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Authoritative source
+      description: Provide the official source location.
+    validations:
+      required: true
+  - type: input
+    id: location
+    attributes:
+      label: Exact source location
+      description: Give the page, table, row, field, or reporting date.
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: Proposed correction and reasoning
+      description: Explain the change and any downstream calculations it affects.
+    validations:
+      required: true
+  - type: dropdown
+    id: evidence_class
+    attributes:
+      label: Evidence classification affected
+      options:
+        - Official
+        - Calculated
+        - Scenario
+        - Unknown
+        - More than one
+        - Unsure
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy confirmation
+      options:
+        - label: I confirm that this report contains no personal claim, medical, identity, credential, or confidential client information.
+          required: true

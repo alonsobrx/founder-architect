@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Análisis accesible, bilingüe y reproducible de la carga de reclamaciones del VA, personal, apelaciones, representación acreditada y gobernanza de inteligencia artificial.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="color-scheme" content="light dark">
+  <title>Observatorio de Capacidad y Debido Proceso de Beneficios para Veteranos</title>
+  <link rel="canonical" href="https://alonsobrx.github.io/founder-architect/observatory/es/">
+  <link rel="alternate" hreflang="en" href="https://alonsobrx.github.io/founder-architect/observatory/">
+  <link rel="alternate" hreflang="es" href="https://alonsobrx.github.io/founder-architect/observatory/es/">
+  <link rel="stylesheet" href="../styles.css">
+  <script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "name": "Observatorio de Capacidad y Debido Proceso de Beneficios para Veteranos",
+    "description": "Análisis accesible, bilingüe y reproducible de la carga de reclamaciones del VA, personal, apelaciones, representación acreditada y gobernanza de inteligencia artificial.",
+    "creator": {"@type": "Person", "name": "Arnoldo A. Alonso"},
+    "version": "0.1.0",
+    "dateModified": "2026-08-10",
+    "isAccessibleForFree": true,
+    "license": "https://creativecommons.org/licenses/by/4.0/"
+  }</script>
+</head>
+<body data-lang="es">
+  <a class="skip-link" href="#main">Saltar al contenido principal</a>
+
+  <header class="site-header">
+    <div class="utility-bar">
+      <a href="../../bio.html">Arnoldo Alonso</a>
+      <span>Vista Preliminar de Investigación Independiente</span>
+      <a href="../" lang="en" hreflang="en">English</a>
+    </div>
+    <div class="hero">
+      <p class="eyebrow">Vista Preliminar de Investigación Independiente · Versión 0.1.0</p>
+      <h1>Observatorio de Capacidad y Debido Proceso de Beneficios para Veteranos</h1>
+      <p class="lede">Un registro público accesible, bilingüe y reproducible sobre reclamaciones, personal, apelaciones, representación y gobernanza de inteligencia artificial del VA.</p>
+      <p class="byline">Director de investigación: Arnoldo A. Alonso<br>Una iniciativa de investigación de interés público del Veterans Defense Fund, actualmente en desarrollo.</p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="#findings">Leer los hallazgos</a>
+        <a class="button" href="#capacity">Probar el modelo</a>
+        <a class="button" href="https://github.com/alonsobrx/founder-architect/tree/main/observatory">Código fuente</a>
+      </div>
+      <p class="update-line">Datos revisados hasta el 10 de agosto de 2026</p>
+    </div>
+    <div class="disclaimer" role="note"><strong>Importante:</strong> Proyecto independiente. No está afiliado ni respaldado por el Departamento de Asuntos de Veteranos. No constituye asesoría legal. No envíe información personal, médica o identificadora de una reclamación por medio de GitHub.</div>
+    <nav class="section-nav" aria-label="Secciones del observatorio"><a href="#overview">Panorama</a><a href="#findings">Hallazgos</a><a href="#capacity">Modelo de capacidad</a><a href="#appeals">Apelaciones</a><a href="#representation">Representación</a><a href="#ai">Registro de IA</a><a href="#policy">Política pública</a><a href="#methodology">Metodología</a><a href="#sources">Fuentes</a><a href="#accessibility">Accesibilidad</a></nav>
+  </header>
+
+  <main id="main">
+    <section id="overview" class="section" aria-labelledby="overview-heading">
+      <div class="section-heading">
+        <p class="section-number">01</p>
+        <h2 id="overview-heading">Panorama operativo nacional</h2>
+      </div>
+      <p class="section-intro">El observatorio separa los hechos publicados por las agencias de los cálculos, escenarios de planificación y vacíos de información. Cada cifra principal enlaza a una fuente oficial y señala sus limitaciones.</p>
+      <div class="metric-grid"><article class="metric-card">
+          <p class="metric-value">17,587,687</p>
+          <h3>Veteranos vivos</h3>
+          <p>Estimación VetPop2023 utilizada en el informe de compensación del año fiscal 2025.</p>
+          <p><span class="badge badge-official">Oficial</span> <a href="#source-va-abr-2025-comp">Fuente</a></p>
+        </article>
+<article class="metric-card">
+          <p class="metric-value">6,338,253</p>
+          <h3>Beneficiarios de compensación</h3>
+          <p>Veteranos que recibían compensación por discapacidad al 30 de septiembre de 2025.</p>
+          <p><span class="badge badge-official">Oficial</span> <a href="#source-va-abr-2025-comp">Fuente</a></p>
+        </article>
+<article class="metric-card">
+          <p class="metric-value">600,639</p>
+          <h3>Reclamaciones de calificación pendientes</h3>
+          <p>Inventario semanal mostrado por VBA el 10 de agosto de 2026.</p>
+          <p><span class="badge badge-official">Oficial</span> <a href="#source-va-claims-weekly">Fuente</a></p>
+        </article>
+<article class="metric-card">
+          <p class="metric-value">69,840</p>
+          <h3>Reclamaciones mayores de 125 días</h3>
+          <p>Subconjunto del atraso relacionado con calificación mostrado el 10 de agosto de 2026.</p>
+          <p><span class="badge badge-official">Oficial</span> <a href="#source-va-claims-weekly">Fuente</a></p>
+        </article>
+<article class="metric-card">
+          <p class="metric-value">31,406</p>
+          <h3>FTE de VBA solicitados para 2027</h3>
+          <p>Puestos equivalentes de tiempo completo de todas las fuentes de financiamiento.</p>
+          <p><span class="badge badge-official">Oficial</span> <a href="#source-va-budget-2027-bib">Fuente</a></p>
+        </article>
+<article class="metric-card">
+          <p class="metric-value">367</p>
+          <h3>Casos de uso individuales de IA del VA</h3>
+          <p>Entradas en todas las etapas del ciclo de vida; no son 367 sistemas desplegados.</p>
+          <p><span class="badge badge-official">Oficial</span> <a href="#source-va-ai-2025">Fuente</a></p>
+        </article></div>
+      <h3 class="subheading">Cuatro clasificaciones de evidencia</h3>
+      <div class="classification-grid"><article><h3><span class="badge badge-official">Oficial</span></h3><p>Publicado directamente por el VA, GAO, el Congreso u otra institución autorizada identificada.</p></article><article><h3><span class="badge badge-calculated">Calculado</span></h3><p>Derivado matemáticamente de valores oficiales, con la fórmula divulgada.</p></article><article><h3><span class="badge badge-scenario">Escenario</span></h3><p>Supuesto editable de planificación utilizado para evaluar decisiones de política pública.</p></article><article><h3><span class="badge badge-unknown">Desconocido</span></h3><p>Hecho material que el registro público disponible no permite establecer.</p></article></div>
+    </section>
+
+    <section id="findings" class="section section-contrast" aria-labelledby="findings-heading">
+      <div class="section-heading">
+        <p class="section-number">02</p>
+        <h2 id="findings-heading">Hallazgos principales</h2>
+      </div>
+      <article class="finding">
+        <h3>1. La demanda de compensación por discapacidad es institucionalmente grande y médicamente compleja</h3>
+        <p>El informe de compensación del año fiscal 2025 identifica 6.34 millones de beneficiarios, equivalentes al 36.04 por ciento de la estimación de 17.59 millones de veteranos vivos. El VA reconoció 46.50 millones de discapacidades relacionadas con el servicio: un promedio de 7.34 por beneficiario. <span class="badge badge-official">Oficial</span></p>
+        <p>El VA informó 1.85 millones de beneficiarios con una calificación combinada de discapacidad del 100 por ciento. Esto equivale al 29.15 por ciento de los beneficiarios y, por cálculo, al 10.50 por ciento de la estimación de veteranos vivos. <span class="badge badge-calculated">Calculado</span></p>
+      </article>
+      <article class="finding">
+        <h3>2. El plan de reclamaciones para 2027 tiene muy poca reserva operativa</h3>
+        <p>El VA proyecta 7,205,120 asuntos entrantes con y sin calificación y 7,365,039 terminaciones. La producción planificada supera los ingresos proyectados por 159,919 asuntos —solo el 2.22 por ciento de los ingresos— mientras que el inventario al cierre permanece en 923,890 asuntos. <span class="badge badge-official">Oficial</span> <span class="badge badge-calculated">Calculado</span></p>
+        <p>La utilización planificada implícita es de 97.83 por ciento. Un aumento de cinco por ciento en los ingresos excedería la producción planificada por 200,337 asuntos; un aumento de diez por ciento produciría un déficit de 560,593 asuntos. <span class="badge badge-calculated">Calculado</span></p>
+        <div class="table-wrap" tabindex="0" aria-label="Carga de compensación por discapacidad proyectada para el año fiscal 2027">
+      <table>
+        <caption>Carga de compensación por discapacidad proyectada para el año fiscal 2027</caption>
+        <thead><tr><th scope="col">Carga</th><th scope="col">Ingresos</th><th scope="col">Producción</th><th scope="col">Inventario al cierre</th></tr></thead>
+        <tbody><tr><th scope="row">Con calificación</th><td>2,921,957</td><td>2,970,929</td><td>453,047</td></tr><tr><th scope="row">Sin calificación</th><td>4,283,163</td><td>4,394,110</td><td>470,843</td></tr><tr><th scope="row">Total</th><td>7,205,120</td><td>7,365,039</td><td>923,890</td></tr></tbody>
+      </table>
+    </div>
+      </article>
+      <article class="finding">
+        <h3>3. El plan de la Junta para 2027 aumenta las apelaciones pendientes</h3>
+        <p>El presupuesto proyecta 113,433 apelaciones recibidas, 102,000 decisiones y 194,191 apelaciones pendientes al cierre del año. La Junta solicita 1,163 FTE: 137 menos que la estimación promulgada para 2026 y 235 menos que el personal real de 2025. <span class="badge badge-official">Oficial</span></p>
+        <p>Utilizando el promedio observado de producción de 2025 únicamente como supuesto de sensibilidad, la Junta necesitaría por lo menos 1,280 FTE para mantenerse al ritmo de los ingresos de 2027, 1,562 FTE para reducir el inventario por 25,000 o 1,844 FTE para reducirlo por 50,000. <span class="badge badge-scenario">Escenario</span></p>
+      </article>
+      <article class="finding">
+        <h3>4. Existe representación acreditada a escala, pero su capacidad no se mide adecuadamente</h3>
+        <p>GAO identificó 13,670 personas acreditadas en noviembre de 2024: 8,141 representantes de organizaciones de servicio a veteranos, 5,008 abogados y 521 agentes de reclamaciones. GAO también informó que tres cuartas partes de aproximadamente un millón de reclamaciones abiertas en agosto de 2024 utilizaron un representante acreditado. <span class="badge badge-official">Oficial</span></p>
+        <p>Esas cifras no indican quién practica activamente derecho de veteranos, acepta clientes nuevos, sirve áreas rurales, ofrece atención en español o acomoda a reclamantes con discapacidad. GAO encontró casi 2,200 solicitudes de agente de reclamaciones atrasadas y una fuerza laboral de ADF de 12 asistentes jurídicos y seis abogados. <span class="badge badge-official">Oficial</span> <span class="badge badge-unknown">Desconocido</span></p>
+      </article>
+      <article class="finding">
+        <h3>5. La afirmación de “367 sistemas de IA funcionando” es incorrecta</h3>
+        <p>El inventario de 2025 contiene 367 casos de uso individuales: 138 en predespliegue, 21 en piloto, 134 desplegados y 74 retirados. Clasifica 215 como de alto impacto, incluidos 90 desplegados. Un caso de uso del inventario no necesariamente representa un sistema único. <span class="badge badge-official">Oficial</span> <span class="badge badge-calculated">Calculado</span></p>
+        <p>Dentro del subconjunto de VBA, este proyecto identificó 27 casos de uso: 12 en predespliegue, dos en piloto, ocho desplegados y cinco retirados. Once están clasificados como de alto impacto; cuatro de ellos están desplegados. <span class="badge badge-calculated">Calculado</span></p>
+      </article>
+      <aside class="limits" aria-labelledby="not-proved-heading">
+        <h3 id="not-proved-heading">Lo que estos datos no demuestran</h3>
+        <ul><li>La medida de exactitud por reclamación de 83.19 por ciento no es una tasa de denegaciones erróneas.</li><li>El registro público no cuenta a los veteranos con condiciones meritorias relacionadas con el servicio que fueron denegados, abandonaron una reclamación o nunca presentaron una.</li><li>El registro público no establece que la mayoría de las personas que ayudan a veteranos carezcan de acreditación.</li><li>El inventario de IA por sí solo no demuestra que un sistema causó una denegación, sesgo o violación del debido proceso.</li><li>Una solicitud presupuestaria es una proyección y propuesta de política, no evidencia de desempeño futuro.</li></ul>
+      </aside>
+    </section>
+
+    <section id="capacity" class="section" aria-labelledby="capacity-heading">
+      <div class="section-heading">
+        <p class="section-number">03</p>
+        <h2 id="capacity-heading">Modelo reproducible de capacidad</h2>
+      </div>
+      <p class="section-intro">Modifique todos los supuestos del escenario. Los ingresos oficiales y la producción planificada están precargados; la utilización, productividad y costo no son normas oficiales de personal.</p>
+      <noscript><p class="noscript">JavaScript solo se requiere para las calculadoras y filtros del registro. Todos los hallazgos, tablas, fuentes y datos descargables permanecen disponibles sin JavaScript.</p></noscript>
+      <form id="capacity-form" class="model" novalidate>
+        <fieldset>
+          <legend>Escenario de capacidad gubernamental para procesar asuntos</legend>
+          <div class="input-grid">
+            <label>Asuntos entrantes por año<input id="annual-receipts" name="annual_receipts" type="number" min="1" step="1" value="7205120" inputmode="numeric"></label>
+            <label>Producción anual planificada actual<input id="planned-production" name="planned_production" type="number" min="1" step="1" value="7365039" inputmode="numeric"></label>
+            <label>Utilización operativa objetivo, porcentaje<input id="target-utilization" name="target_utilization" type="number" min="50" max="99.9" step="0.1" value="85" inputmode="decimal"></label>
+            <label>Reducción anual dedicada del inventario<input id="inventory-reduction" name="inventory_reduction" type="number" min="0" step="1000" value="100000" inputmode="numeric"></label>
+            <label>Asuntos marginales por FTE adicional al año<input id="marginal-productivity" name="marginal_productivity" type="number" min="1" step="1" value="225" inputmode="numeric"></label>
+            <label>Costo anual total por FTE adicional, dólares<input id="loaded-cost" name="loaded_cost" type="number" min="1" step="1000" value="180000" inputmode="numeric"></label>
+          </div>
+          <button class="button" type="reset">Restablecer datos oficiales y supuestos del escenario</button>
+        </fieldset>
+        <div class="model-results" id="capacity-results" aria-live="polite" aria-atomic="true">
+          <div><span>Utilización planificada</span><strong data-capacity-output="planned-utilization">—</strong></div>
+          <div><span>Capacidad anual requerida</span><strong data-capacity-output="required-capacity">—</strong></div>
+          <div><span>Capacidad anual adicional</span><strong data-capacity-output="additional-capacity">—</strong></div>
+          <div><span>FTE equivalentes adicionales para procesar asuntos</span><strong data-capacity-output="additional-fte">—</strong></div>
+          <div><span>Costo anual estimado de personal</span><strong data-capacity-output="annual-cost">—</strong></div>
+          <div><span>Porción del presupuesto del VA para 2027</span><strong data-capacity-output="budget-share">—</strong></div>
+        </div>
+      </form>
+      <details class="formula"><summary>Fórmula</summary><p>Capacidad requerida = asuntos entrantes ÷ utilización objetivo + reducción dedicada del inventario. FTE adicionales = capacidad adicional ÷ asuntos marginales por FTE, redondeado hacia arriba.</p></details>
+
+      <h3 id="claimant-heading" class="subheading">Escenario de paridad para reclamantes</h3>
+      <p>Este modelo estima una fuerza laboral multidisciplinaria para una proporción seleccionada de asuntos complejos de calificación. No crea un derecho legal a abogado ni supone que cada profesional sea abogado.</p>
+      <form id="claimant-form" class="model" novalidate>
+        <fieldset>
+          <legend>Escenario de asistencia intensiva para reclamantes</legend>
+          <div class="input-grid">
+            <label>Ingresos anuales de reclamaciones de calificación<input id="rating-receipts" type="number" min="1" step="1" value="2921957" inputmode="numeric"></label>
+            <label>Proporción que requiere asistencia intensiva, porcentaje<input id="intensive-share" type="number" min="1" max="100" step="0.1" value="25" inputmode="decimal"></label>
+            <label>Asuntos intensivos por profesional al año<input id="cases-per-professional" type="number" min="1" step="1" value="85" inputmode="numeric"></label>
+            <label>Costo anual total por profesional, dólares<input id="professional-cost" type="number" min="1" step="1000" value="160000" inputmode="numeric"></label>
+          </div>
+        </fieldset>
+        <div class="model-results" id="claimant-results" aria-live="polite" aria-atomic="true">
+          <div><span>Asuntos intensivos</span><strong data-claimant-output="intensive-matters">—</strong></div>
+          <div><span>Profesionales de tiempo completo del lado del reclamante</span><strong data-claimant-output="professionals">—</strong></div>
+          <div><span>Costo anual estimado</span><strong data-claimant-output="annual-cost">—</strong></div>
+          <div><span>Porción del presupuesto del VA para 2027</span><strong data-claimant-output="budget-share">—</strong></div>
+        </div>
+      </form>
+      <p class="model-note">Los posibles puestos incluyen personal acreditado de organizaciones de servicio, abogados, agentes de reclamaciones, asistentes jurídicos, coordinadores de evidencia médica, intérpretes y especialistas en accesibilidad bajo supervisión legal y controles de conflicto. <span class="badge badge-scenario">Escenario</span></p>
+    </section>
+
+    <section id="appeals" class="section section-contrast" aria-labelledby="appeals-heading">
+      <div class="section-heading">
+        <p class="section-number">04</p>
+        <h2 id="appeals-heading">Modelo de sensibilidad de apelaciones</h2>
+      </div>
+      <p class="section-intro">El cálculo utiliza las decisiones de la Junta en 2025 divididas por los FTE de 2025 —88.67 decisiones por FTE— como promedio observado. No incorpora cambios futuros en la composición de casos o del personal. <span class="badge badge-scenario">Escenario</span></p>
+      <div class="table-wrap" tabindex="0" aria-label="Personal ilustrativo de la Junta utilizando la producción promedio observada en 2025">
+      <table>
+        <caption>Personal ilustrativo de la Junta utilizando la producción promedio observada en 2025</caption>
+        <thead><tr><th scope="col">Objetivo de política</th><th scope="col">Decisiones anuales requeridas</th><th scope="col">FTE enteros mínimos</th><th scope="col">Diferencia frente a la solicitud de 2027</th></tr></thead>
+        <tbody><tr><th scope="row">Mantenerse al ritmo de los ingresos de 2027</th><td>113,433</td><td>1,280</td><td>+117</td></tr><tr><th scope="row">Reducir el inventario pendiente por 25,000</th><td>138,433</td><td>1,562</td><td>+399</td></tr><tr><th scope="row">Reducir el inventario pendiente por 50,000</th><td>163,433</td><td>1,844</td><td>+681</td></tr></tbody>
+      </table>
+    </div>
+    </section>
+
+    <section id="representation" class="section" aria-labelledby="representation-heading">
+      <div class="section-heading">
+        <p class="section-number">05</p>
+        <h2 id="representation-heading">Capacidad de representación acreditada</h2>
+      </div>
+      <div class="table-wrap" tabindex="0" aria-label="Personas acreditadas y capacidad del programa ADF informadas por GAO">
+      <table>
+        <caption>Personas acreditadas y capacidad del programa ADF informadas por GAO</caption>
+        <thead><tr><th scope="col">Medida</th><th scope="col">Cantidad</th><th scope="col">Fecha del dato</th><th scope="col">Lo que permanece desconocido</th></tr></thead>
+        <tbody><tr><th scope="row">Representantes de organizaciones de servicio</th><td>8,141</td><td>Noviembre de 2024</td><td>Casos activos, disponibilidad, idioma, geografía y accesibilidad</td></tr><tr><th scope="row">Abogados</th><td>5,008</td><td>Noviembre de 2024</td><td>Proporción que practica derecho de veteranos y disponibilidad para clientes nuevos</td></tr><tr><th scope="row">Agentes de reclamaciones</th><td>521</td><td>Noviembre de 2024</td><td>Casos activos y cobertura geográfica</td></tr><tr><th scope="row">Solicitudes de agentes pendientes</th><td>Casi 2,200</td><td>Noviembre de 2024</td><td>Inventario actual y distribución por antigüedad</td></tr><tr><th scope="row">Personal adjudicativo de ADF</th><td>12 asistentes jurídicos; 6 abogados</td><td>Noviembre de 2024</td><td>Personal actual y análisis de fuerza laboral posterior a OPM</td></tr></tbody>
+      </table>
+    </div>
+    </section>
+
+    <section id="ai" class="section section-contrast" aria-labelledby="ai-heading">
+      <div class="section-heading">
+        <p class="section-number">06</p>
+        <h2 id="ai-heading">Registro de inteligencia artificial de VBA</h2>
+      </div>
+      <p class="section-intro">La tabla es un subconjunto reproducible del inventario oficial de 2025. Incluye cada fila asignada a la Administración de Beneficios para Veteranos. Los campos faltantes permanecen faltantes; el proyecto no los infiere.</p>
+      <div class="filter-grid">
+        <label for="ai-search">Buscar casos de uso de IA de VBA<input id="ai-search" type="search" placeholder="Buscar por nombre, identificación o tema" autocomplete="off"></label>
+        <label for="ai-stage">Filtrar por etapa del ciclo de vida<select id="ai-stage"><option value="">Todos</option><option value="Pre-deployment">Predespliegue</option><option value="Pilot">Piloto</option><option value="Deployed">Desplegado</option><option value="Retired">Retirado</option></select></label>
+        <label for="ai-impact">Filtrar por clasificación de impacto<select id="ai-impact"><option value="">Todos</option><option value="High-impact">Alto impacto</option><option value="Not high-impact">No alto impacto</option></select></label>
+      </div>
+      <p id="ai-count" class="result-count" aria-live="polite">Mostrando 27 de 27 casos de uso de VBA.</p>
+      <div class="table-wrap ai-table-wrap" tabindex="0" aria-label="Filas de VBA en el Inventario de Casos de Uso de IA del VA de 2025">
+      <table id="ai-table">
+        <caption>Filas de VBA en el Inventario de Casos de Uso de IA del VA de 2025</caption>
+        <thead><tr><th scope="col">ID del caso de uso</th><th scope="col">Nombre del caso de uso</th><th scope="col">Etapa del ciclo de vida</th><th scope="col">Clasificación de impacto</th><th scope="col">Área temática</th></tr></thead>
+        <tbody><tr data-ai-row data-stage="Pilot" data-impact="Not high-impact" data-search="va-24-2143 call center knowledge navigator government benefits processing pilot not high-impact">
+          <th scope="row"><code>VA-24-2143</code></th>
+          <td>Call Center Knowledge Navigator</td>
+          <td>Piloto</td>
+          <td>No alto impacto</td>
+          <td>Procesamiento de beneficios gubernamentales</td>
+        </tr><tr data-ai-row data-stage="Retired" data-impact="High-impact" data-search="va-24-2184 national training team | schools — faq gen ai dashboard  retired high-impact">
+          <th scope="row"><code>VA-24-2184</code></th>
+          <td>National Training Team | Schools — FAQ Gen AI Dashboard</td>
+          <td>Retirado</td>
+          <td>Alto impacto</td>
+          <td>No informado</td>
+        </tr><tr data-ai-row data-stage="Retired" data-impact="Not high-impact" data-search="va-24-2266 national training team | schools nlp faq dashboard  retired not high-impact">
+          <th scope="row"><code>VA-24-2266</code></th>
+          <td>National Training Team | Schools NLP FAQ Dashboard</td>
+          <td>Retirado</td>
+          <td>No alto impacto</td>
+          <td>No informado</td>
+        </tr><tr data-ai-row data-stage="Deployed" data-impact="Not high-impact" data-search="va-24-2545 privacy act automation administrative functions deployed not high-impact">
+          <th scope="row"><code>VA-24-2545</code></th>
+          <td>Privacy Act Automation</td>
+          <td>Desplegado</td>
+          <td>No alto impacto</td>
+          <td>Funciones administrativas</td>
+        </tr><tr data-ai-row data-stage="Deployed" data-impact="High-impact" data-search="va-24-3291 payment redirect fraud (prf) model procurement &amp; financial management deployed high-impact">
+          <th scope="row"><code>VA-24-3291</code></th>
+          <td>Payment Redirect Fraud (PRF) Model</td>
+          <td>Desplegado</td>
+          <td>Alto impacto</td>
+          <td>Adquisiciones y administración financiera</td>
+        </tr><tr data-ai-row data-stage="Retired" data-impact="Not high-impact" data-search="va-24-3578 synthetic data creation  retired not high-impact">
+          <th scope="row"><code>VA-24-3578</code></th>
+          <td>Synthetic Data Creation</td>
+          <td>Retirado</td>
+          <td>No alto impacto</td>
+          <td>No informado</td>
+        </tr><tr data-ai-row data-stage="Retired" data-impact="Not high-impact" data-search="va-24-3619 billie gpt  retired not high-impact">
+          <th scope="row"><code>VA-24-3619</code></th>
+          <td>Billie GPT</td>
+          <td>Retirado</td>
+          <td>No alto impacto</td>
+          <td>No informado</td>
+        </tr><tr data-ai-row data-stage="Retired" data-impact="High-impact" data-search="va-24-3824 electronic virtual assistant (e-va)  retired high-impact">
+          <th scope="row"><code>VA-24-3824</code></th>
+          <td>electronic Virtual Assistant (e-VA)</td>
+          <td>Retirado</td>
+          <td>Alto impacto</td>
+          <td>No informado</td>
+        </tr><tr data-ai-row data-stage="Deployed" data-impact="High-impact" data-search="va-24-4722 automated decision support government benefits processing deployed high-impact">
+          <th scope="row"><code>VA-24-4722</code></th>
+          <td>Automated Decision Support</td>
+          <td>Desplegado</td>
+          <td>Alto impacto</td>
+          <td>Procesamiento de beneficios gubernamentales</td>
+        </tr><tr data-ai-row data-stage="Deployed" data-impact="High-impact" data-search="va-24-4763 mail automation services government benefits processing deployed high-impact">
+          <th scope="row"><code>VA-24-4763</code></th>
+          <td>Mail Automation Services</td>
+          <td>Desplegado</td>
+          <td>Alto impacto</td>
+          <td>Procesamiento de beneficios gubernamentales</td>
+        </tr><tr data-ai-row data-stage="Pilot" data-impact="Not high-impact" data-search="va-24-4804 master claims assistance tool (m-cat) government benefits processing pilot not high-impact">
+          <th scope="row"><code>VA-24-4804</code></th>
+          <td>Master Claims Assistance Tool (M-CAT)</td>
+          <td>Piloto</td>
+          <td>No alto impacto</td>
+          <td>Procesamiento de beneficios gubernamentales</td>
+        </tr><tr data-ai-row data-stage="Deployed" data-impact="High-impact" data-search="va-24-790 pension optimization initiative (poi) government benefits processing deployed high-impact">
+          <th scope="row"><code>VA-24-790</code></th>
+          <td>Pension Optimization Initiative (POI)</td>
+          <td>Desplegado</td>
+          <td>Alto impacto</td>
+          <td>Procesamiento de beneficios gubernamentales</td>
+        </tr><tr data-ai-row data-stage="Pre-deployment" data-impact="Not high-impact" data-search="va-25-1348 smart claim check government benefits processing pre-deployment not high-impact">
+          <th scope="row"><code>VA-25-1348</code></th>
+          <td>Smart Claim Check</td>
+          <td>Predespliegue</td>
+          <td>No alto impacto</td>
+          <td>Procesamiento de beneficios gubernamentales</td>
+        </tr><tr data-ai-row data-stage="Deployed" data-impact="Not high-impact" data-search="va-25-1471 articulate 360: ai assistant human resources deployed not high-impact">
+          <th scope="row"><code>VA-25-1471</code></th>
+          <td>Articulate 360: AI Assistant</td>
+          <td>Desplegado</td>
+          <td>No alto impacto</td>
+          <td>Recursos humanos</td>
+        </tr><tr data-ai-row data-stage="Pre-deployment" data-impact="Not high-impact" data-search="va-25-1512 loan guaranty lender’s handbook chatbot service delivery pre-deployment not high-impact">
+          <th scope="row"><code>VA-25-1512</code></th>
+          <td>Loan Guaranty Lender’s Handbook Chatbot</td>
+          <td>Predespliegue</td>
+          <td>No alto impacto</td>
+          <td>Prestación de servicios</td>
+        </tr><tr data-ai-row data-stage="Pre-deployment" data-impact="High-impact" data-search="va-25-1594 automated ratings summarization government benefits processing pre-deployment high-impact">
+          <th scope="row"><code>VA-25-1594</code></th>
+          <td>Automated Ratings Summarization</td>
+          <td>Predespliegue</td>
+          <td>Alto impacto</td>
+          <td>Procesamiento de beneficios gubernamentales</td>
+        </tr><tr data-ai-row data-stage="Pre-deployment" data-impact="Not high-impact" data-search="va-25-2036 education call center (ecc) next gen poc service delivery pre-deployment not high-impact">
+          <th scope="row"><code>VA-25-2036</code></th>
+          <td>Education Call Center (ECC) Next Gen POC</td>
+          <td>Predespliegue</td>
+          <td>No alto impacto</td>
+          <td>Prestación de servicios</td>
+        </tr><tr data-ai-row data-stage="Pre-deployment" data-impact="Not high-impact" data-search="va-25-2089 ai personal assistance poc administrative functions pre-deployment not high-impact">
+          <th scope="row"><code>VA-25-2089</code></th>
+          <td>AI Personal Assistance POC</td>
+          <td>Predespliegue</td>
+          <td>No alto impacto</td>
+          <td>Funciones administrativas</td>
+        </tr><tr data-ai-row data-stage="Pre-deployment" data-impact="Not high-impact" data-search="va-25-2373 generative annotations government benefits processing pre-deployment not high-impact">
+          <th scope="row"><code>VA-25-2373</code></th>
+          <td>Generative Annotations</td>
+          <td>Predespliegue</td>
+          <td>No alto impacto</td>
+          <td>Procesamiento de beneficios gubernamentales</td>
+        </tr><tr data-ai-row data-stage="Pre-deployment" data-impact="High-impact" data-search="va-25-3480 smart pension automation government benefits processing pre-deployment high-impact">
+          <th scope="row"><code>VA-25-3480</code></th>
+          <td>Smart Pension Automation</td>
+          <td>Predespliegue</td>
+          <td>Alto impacto</td>
+          <td>Procesamiento de beneficios gubernamentales</td>
+        </tr><tr data-ai-row data-stage="Pre-deployment" data-impact="Not high-impact" data-search="va-25-3670 aska: automated support and knowledge assistance other pre-deployment not high-impact">
+          <th scope="row"><code>VA-25-3670</code></th>
+          <td>ASKA: Automated Support and Knowledge Assistance</td>
+          <td>Predespliegue</td>
+          <td>No alto impacto</td>
+          <td>Otro</td>
+        </tr><tr data-ai-row data-stage="Pre-deployment" data-impact="High-impact" data-search="va-25-393 predictive claims processing capability poc government benefits processing pre-deployment high-impact">
+          <th scope="row"><code>VA-25-393</code></th>
+          <td>Predictive Claims Processing Capability POC</td>
+          <td>Predespliegue</td>
+          <td>Alto impacto</td>
+          <td>Procesamiento de beneficios gubernamentales</td>
+        </tr><tr data-ai-row data-stage="Deployed" data-impact="Not high-impact" data-search="va-25-5163 customer sentiment human resources deployed not high-impact">
+          <th scope="row"><code>VA-25-5163</code></th>
+          <td>Customer Sentiment</td>
+          <td>Desplegado</td>
+          <td>No alto impacto</td>
+          <td>Recursos humanos</td>
+        </tr><tr data-ai-row data-stage="Pre-deployment" data-impact="High-impact" data-search="va-25-5578 aices government benefits processing pre-deployment high-impact">
+          <th scope="row"><code>VA-25-5578</code></th>
+          <td>AICES</td>
+          <td>Predespliegue</td>
+          <td>Alto impacto</td>
+          <td>Procesamiento de beneficios gubernamentales</td>
+        </tr><tr data-ai-row data-stage="Pre-deployment" data-impact="Not high-impact" data-search="va-25-5852 vba mail management services (mms) - modification government benefits processing pre-deployment not high-impact">
+          <th scope="row"><code>VA-25-5852</code></th>
+          <td>VBA Mail Management Services (MMS) - Modification</td>
+          <td>Predespliegue</td>
+          <td>No alto impacto</td>
+          <td>Procesamiento de beneficios gubernamentales</td>
+        </tr><tr data-ai-row data-stage="Pre-deployment" data-impact="High-impact" data-search="va-25-6965 smart ratings recommendation government benefits processing pre-deployment high-impact">
+          <th scope="row"><code>VA-25-6965</code></th>
+          <td>Smart Ratings Recommendation</td>
+          <td>Predespliegue</td>
+          <td>Alto impacto</td>
+          <td>Procesamiento de beneficios gubernamentales</td>
+        </tr><tr data-ai-row data-stage="Deployed" data-impact="Not high-impact" data-search="va-25-733 auto doc id administrative functions deployed not high-impact">
+          <th scope="row"><code>VA-25-733</code></th>
+          <td>Auto Doc ID</td>
+          <td>Desplegado</td>
+          <td>No alto impacto</td>
+          <td>Funciones administrativas</td>
+        </tr></tbody>
+      </table>
+    </div>
+      <p><a class="button" href="../data/va-ai-vba-use-cases.json" download>Descargar el subconjunto detallado de IA de VBA en JSON</a></p>
+      <p class="model-note">Documentos presupuestarios separados indican que el soporte automatizado de decisiones está planificado para más del 90 por ciento del volumen de reclamaciones de VBA para finales de 2027, mientras los empleados de VBA conservan la autoridad de decisión final. El estado del inventario y la cobertura operativa son medidas distintas.</p>
+    </section>
+
+    <section id="policy" class="section" aria-labelledby="policy-heading">
+      <div class="section-heading">
+        <p class="section-number">07</p>
+        <h2 id="policy-heading">Marco de política listo para la petición</h2>
+      </div>
+      <p class="section-intro">Esta vista preliminar no publica una petición legal final ni afirma que los escenarios preliminares de personal sean hechos adjudicados. Convierte la evidencia en seis solicitudes revisables.</p>
+      <div class="policy-grid"><article class="policy-card"><h3>Reserva de capacidad y transparencia</h3><p>Exigir que el VA publique un modelo de carga y personal, intervalos de error del pronóstico, supuestos ocupacionales y una reserva financiada para aumentos inesperados, en lugar de planificar cerca de saturación.</p></article><article class="policy-card"><h3>Estabilización de la Junta</h3><p>Impedir que los ingresos anuales de apelaciones excedan la capacidad de decisión y financiar un plan temporal de reducción de inventario con metas específicas por expediente.</p></article><article class="policy-card"><h3>Plan de fuerza laboral de acreditación</h3><p>Publicar el análisis de fuerza laboral terminado, antigüedad de solicitudes, capacidad activa de representantes, cobertura lingüística, capacidad de accesibilidad y brechas geográficas.</p></article><article class="policy-card"><h3>Paridad del lado del reclamante</h3><p>Financiar asistencia independiente, acreditada y multidisciplinaria para casos complejos y reclamantes rurales, sin vivienda, ciegos o con discapacidad visual, con discapacidad cognitiva o cuyo idioma principal sea español.</p></article><article class="policy-card"><h3>Debido proceso para IA de alto impacto</h3><p>Exigir aprobación humana, registros de auditoría inmutables, divulgación suficiente de modelos y proveedores, pruebas demográficas y de accesibilidad, informes de anulaciones, aviso y un proceso eficaz para impugnar resultados.</p></article><article class="policy-card"><h3>Datos de resultados por asunto</h3><p>Publicar concesiones, concesiones parciales, denegaciones, razones, resultados de revisión, remisiones, revocaciones, tiempo hasta resolución final y muertes antes de la resolución sin revelar información personal.</p></article></div>
+      <aside class="legal-framing">
+        <h3>Formulación legal más segura</h3>
+        <p>La evidencia respalda alegaciones de asimetría estructural, escasez regulatoria, dependencia de contratistas, riesgo de colas y costos sociales externalizados. Por sí sola, no establece soborno, fraude o corrupción criminal por una persona identificada. La petición pública debe conservar esa distinción.</p>
+      </aside>
+    </section>
+
+    <section id="methodology" class="section section-contrast" aria-labelledby="methodology-heading">
+      <div class="section-heading">
+        <p class="section-number">08</p>
+        <h2 id="methodology-heading">Metodología y controles de corrección</h2>
+      </div>
+      <div class="method-grid"><article><h3>Disciplina de unidades</h3><p>Una reclamación agrupada de calificación no equivale a un asunto médico individual, examen, apelación o veterano. El sitio identifica la unidad utilizada por cada fuente.</p></article><article><h3>Disciplina de proyecciones</h3><p>Los valores presupuestarios de 2027 se presentan como solicitudes o proyecciones, nunca como resultados terminados.</p></article><article><h3>Sin falsa precisión</h3><p>Los resultados de personal y costo son escenarios. El usuario puede modificar cada supuesto no oficial.</p></article><article><h3>Reproducibilidad</h3><p>Archivos públicos JSON y CSV contienen entradas, fórmulas, ubicaciones de fuentes, fechas de consulta, limitaciones y huellas criptográficas de documentos.</p></article><article><h3>Procedimiento de corrección</h3><p>Una corrección debe identificar la afirmación disputada, fuente autorizada, ubicación exacta y cambio solicitado. Las correcciones materiales aparecen en el registro de cambios.</p></article><article><h3>Privacidad</h3><p>Ningún expediente individual, registro médico, número de archivo del VA, Seguro Social, domicilio, credencial o lógica propietaria de Ayala pertenece en este repositorio.</p></article></div>
+      <h3 class="subheading">Descargas de datos abiertos</h3>
+      <ul class="download-list"><li><a href="../data/metrics.json" download>Conjunto de métricas, JSON</a></li><li><a href="../data/metrics.csv" download>Conjunto de métricas, CSV</a></li><li><a href="../data/sources.json" download>Registro de fuentes, JSON</a></li><li><a href="../data/sources.csv" download>Registro de fuentes, CSV</a></li><li><a href="../data/model-assumptions.json" download>Supuestos del modelo, JSON</a></li><li><a href="../data/va-ai-vba-use-cases.json" download>Registro de IA de VBA, JSON</a></li></ul>
+    </section>
+
+    <section id="sources" class="section" aria-labelledby="sources-heading">
+      <div class="section-heading">
+        <p class="section-number">09</p>
+        <h2 id="sources-heading">Registro público de fuentes y evidencia</h2>
+      </div>
+      <p class="section-intro">Los documentos estáticos se registran con huellas SHA-256. Las páginas dinámicas se identifican como tales y deben verificarse nuevamente antes de citarlas.</p>
+      <div class="table-wrap source-table-wrap" tabindex="0" aria-label="Registro público de fuentes y evidencia">
+      <table>
+        <caption>Registro público de fuentes y evidencia</caption>
+        <thead><tr><th scope="col">Fuente</th><th scope="col">Periodo del dato</th><th scope="col">Uso</th><th scope="col">Ubicación e integridad</th><th scope="col">Limitación</th></tr></thead>
+        <tbody><tr id="source-va-claims-weekly">
+          <th scope="row"><a href="https://benefits.va.gov/reports/detailed_claims_data.asp" lang="en">Detailed Claims Data</a><br><span class="source-id">VA-CLAIMS-WEEKLY</span></th>
+          <td>Estado semanal mostrado el 10 de agosto de 2026</td>
+          <td>Reclamaciones agrupadas de calificación actualmente pendientes; Reclamaciones con más de 125 días; Exactitud por asunto y por reclamación</td>
+          <td><span class="hash">Informes de estado del inventario, atraso y exactitud de reclamaciones. Página dinámica</span></td>
+          <td>Página dinámica. Los valores cambian semanalmente. La exactitud por reclamación es la proporción de casos de la muestra que no contenían errores; no es una tasa de denegaciones indebidas.</td>
+        </tr><tr id="source-va-abr-2025-comp">
+          <th scope="row"><a href="https://www.benefits.va.gov/REPORTS/abr/docs/2025-compensation.pdf" lang="en">FY 2025 Annual Benefits Report: Compensation</a><br><span class="source-id">VA-ABR-2025-COMP</span></th>
+          <td>Año fiscal 2025; beneficiarios al 30 de septiembre de 2025</td>
+          <td>Población de veteranos; Beneficiarios de compensación; Discapacidades reconocidas como relacionadas con el servicio; Calificaciones combinadas del 100 por ciento</td>
+          <td><span class="hash">Páginas 4, 5, 8 y 10 del PDF. SHA-256: b78b0ef4f76c82b5dec067ac7f54f48821f7b72626e15170561ca9877f13fd29</span></td>
+          <td>Cuenta las discapacidades reconocidas como relacionadas con el servicio, no todas las condiciones reclamadas o experimentadas. La población de veteranos se basa en VetPop2023.</td>
+        </tr><tr id="source-va-budget-2027-bib">
+          <th scope="row"><a href="https://department.va.gov/wp-content/uploads/2026/04/2027-BiB.pdf" lang="en">FY 2027 Congressional Submission: Budget in Brief</a><br><span class="source-id">VA-BUDGET-2027-BIB</span></th>
+          <td>Datos reales de 2025, promulgados o estimados de 2026 y solicitud de 2027</td>
+          <td>Personal del VA y de VBA; Proyecciones de personal y apelaciones de la Junta; Totales presupuestarios</td>
+          <td><span class="hash">Páginas 1, 8 y 35–38 del PDF. SHA-256: 83dba990470148f01f9090730ddac932a8809b12775f0fcf0a00c34b378ea09e</span></td>
+          <td>Los valores de 2027 son solicitudes o proyecciones, no resultados promulgados.</td>
+        </tr><tr id="source-va-budget-2027-v3">
+          <th scope="row"><a href="https://department.va.gov/wp-content/uploads/2026/04/Volume-3.pdf" lang="en">FY 2027 Congressional Submission, Volume III: Benefits and Burial Programs and Departmental Administration</a><br><span class="source-id">VA-BUDGET-2027-V3</span></th>
+          <td>Datos de carga de trabajo y presupuesto de 2024–2027</td>
+          <td>Ingresos, producción e inventario de asuntos de calificación y no calificación; Expansión del apoyo automatizado de decisiones; Contexto de FTE de mano de obra directa</td>
+          <td><span class="hash">Páginas 77–79 y 59–71 del PDF. SHA-256: 0792f98b5038a3f1cb54aa8e857076ca098bfcf707250860ea3bcb89d23a0ead</span></td>
+          <td>Las reclamaciones proyectadas incluyen la carga de trabajo de la Ley PACT, mientras que la tabla de FTE de mano de obra directa citada en el documento excluye los FTE del Fondo de Exposiciones Tóxicas. Por ello, este observatorio no trata esa tabla como un denominador completo de productividad.</td>
+        </tr><tr id="source-va-ai-2025">
+          <th scope="row"><a href="https://department.va.gov/ai/wp-content/uploads/sites/26/2026/04/VA-AI-Use-Case-Inventory-2025-Web-Compliance-Updates.xlsx" lang="en">2025 VA AI Use Case Inventory</a><br><span class="source-id">VA-AI-2025</span></th>
+          <td>Inventario vigente a diciembre de 2025</td>
+          <td>Conteos por etapa del ciclo de vida de la IA; Conteos de alto impacto; Registro de IA específico de VBA</td>
+          <td><span class="hash">Hoja All Use Cases, filas 3–369. SHA-256: f6bfdb02859539de48aeba1003afda18bd0fa92223df33763bc872e292b8ad88</span></td>
+          <td>Una entrada del inventario es un caso de uso, no necesariamente un sistema de software único. Debe considerarse la etapa del ciclo de vida; las entradas retiradas y en predespliegue no son sistemas de producción en ejecución.</td>
+        </tr><tr id="source-gao-25-107211">
+          <th scope="row"><a href="https://www.gao.gov/assets/gao-25-107211.pdf" lang="en">Veterans Benefits: More Thorough Planning Needed to Help Better Protect Veterans Assisted by Representatives</a><br><span class="source-id">GAO-25-107211</span></th>
+          <td>Datos principalmente hasta noviembre de 2024</td>
+          <td>Conteos de representantes acreditados; Atraso de solicitudes de agentes de reclamaciones; Personal de ADF</td>
+          <td><span class="hash">Páginas del informe sobre conteos de representantes y recursos de fuerza laboral de ADF. SHA-256: ef8d2a30cf96b996a2bb1c9a726696c56243ee3ff5f219fd7d6d1c159c6f8db2</span></td>
+          <td>La acreditación no establece práctica activa, disponibilidad para clientes nuevos, carga de casos, capacidad lingüística, geografía o capacidad de accesibilidad.</td>
+        </tr><tr id="source-wcag-22">
+          <th scope="row"><a href="https://www.w3.org/TR/WCAG22/" lang="en">Web Content Accessibility Guidelines (WCAG) 2.2</a><br><span class="source-id">WCAG-22</span></th>
+          <td>Recomendación vigente</td>
+          <td>Meta de accesibilidad y protocolo de pruebas</td>
+          <td><span class="hash">Recomendación del W3C. Página dinámica</span></td>
+          <td>Este proyecto aspira a WCAG 2.2 AA. Las pruebas automatizadas por sí solas no pueden establecer conformidad plena.</td>
+        </tr></tbody>
+      </table>
+    </div>
+    </section>
+
+    <section id="accessibility" class="section section-contrast" aria-labelledby="accessibility-heading">
+      <div class="section-heading">
+        <p class="section-number">10</p>
+        <h2 id="accessibility-heading">Declaración de accesibilidad</h2>
+      </div>
+      <p>El HTML accesible es el formato autoritativo. El proyecto aspira a WCAG 2.2 nivel AA, pero no afirma conformidad certificada. Utiliza encabezados y regiones semánticas, controles operables por teclado, enfoque visible, alto contraste, objetivos táctiles grandes, movimiento reducido, títulos descriptivos para tablas y equivalentes textuales en lugar de depender de gráficas.</p>
+      <p>Las pruebas automatizadas no sustituyen la revisión por usuarios con discapacidad. Sigue pendiente la aceptación manual con TalkBack y Chrome en Android, NVDA con Firefox y Chrome en Windows, VoiceOver con Safari, navegación solo por teclado y ampliación del navegador al 200 y 400 por ciento.</p>
+      <p><a href="https://github.com/alonsobrx/founder-architect/issues/new">Informe un defecto de accesibilidad mediante GitHub Issues sin incluir información personal de una reclamación.</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Investigación independiente de interés público por Arnoldo A. Alonso. Veterans Defense Fund es una iniciativa en desarrollo y aquí no se presenta como una organización sin fines de lucro incorporada.</p>
+    <p><a href="https://www.linkedin.com/in/alonsobrx">LinkedIn</a> · <a href="https://github.com/alonsobrx/founder-architect/tree/main/observatory">Código fuente</a></p>
+    <p class="preview-note">Vista preliminar: pública mediante enlace directo y excluida intencionalmente de los índices de búsqueda mientras se revisa.</p>
+  </footer>
+
+  <script src="../app.js" defer></script>
+</body>
+</html>
