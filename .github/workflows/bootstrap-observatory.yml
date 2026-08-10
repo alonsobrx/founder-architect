@@ -27,7 +27,7 @@ jobs:
           cat .bootstrap/observatory/part-* | base64 --decode > /tmp/observatory-launch.tar.gz
           test -s /tmp/observatory-launch.tar.gz
           gzip --test /tmp/observatory-launch.tar.gz
-          sha256sum /tmp/observatory-launch.tar.gz
+          echo "56f0b3c75f6f9e0080173a73b4a58b13efe920f30b8038fbd367f533badebba1  /tmp/observatory-launch.tar.gz" | sha256sum --check --strict
 
       - name: Inspect archive paths
         shell: bash
@@ -59,6 +59,8 @@ jobs:
           python -m py_compile observatory/scripts/recalculate_metrics.py observatory/scripts/validate_observatory.py
           python observatory/scripts/recalculate_metrics.py --check
           python observatory/scripts/validate_observatory.py
+          rm -rf observatory/scripts/__pycache__
+          rm -f .github/workflows/observatory-validate.yml
 
       - name: Publish release to main
         shell: bash
