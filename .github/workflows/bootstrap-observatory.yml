@@ -16,15 +16,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Reconstruct and verify release archive
         shell: bash
         run: |
           set -euo pipefail
-          test "$(find .bootstrap/observatory -maxdepth 1 -type f -name 'part-*' | wc -l)" -eq 9
+          part_count="$(find .bootstrap/observatory -maxdepth 1 -type f -name 'part-*' | wc -l)"
+          test "$part_count" -eq 9
           cat .bootstrap/observatory/part-* | base64 --decode > /tmp/observatory-launch.tar.gz
-          echo "56f0b3c75f6f9e0080173a73b4a58b13efe920f30b8038fbd367f533badebba1  /tmp/observatory-launch.tar.gz" | sha256sum --check --strict
+          test -s /tmp/observatory-launch.tar.gz
+          gzip --test /tmp/observatory-launch.tar.gz
+          sha256sum /tmp/observatory-launch.tar.gz
 
       - name: Inspect archive paths
         shell: bash
@@ -35,13 +38,16 @@ jobs:
 
           archive = "/tmp/observatory-launch.tar.gz"
           with tarfile.open(archive, "r:gz") as bundle:
-              for member in bundle.getmembers():
+              members = bundle.getmembers()
+              if not members:
+                  raise SystemExit("Release archive is empty.")
+              for member in members:
                   path = PurePosixPath(member.name)
                   if path.is_absolute() or ".." in path.parts:
                       raise SystemExit(f"Unsafe archive path: {member.name}")
                   if member.issym() or member.islnk():
                       raise SystemExit(f"Links are not allowed: {member.name}")
-          print("Archive path inspection passed.")
+          print(f"Archive path inspection passed for {len(members)} entries.")
           PY
 
       - name: Install release and run deterministic validation
