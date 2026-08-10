@@ -3,6 +3,11 @@ name: CodeQL analysis
 on:
   push:
     branches: [main]
+  pull_request:
+    paths:
+      - "**/*.js"
+      - "**/*.py"
+      - ".github/workflows/**"
   schedule:
     - cron: "41 12 * * 3"
   workflow_dispatch:
