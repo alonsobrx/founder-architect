@@ -13,10 +13,12 @@ async function audit() {
   const results = [];
   try {
     const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
+    await page.addInitScript({ path: axe });
     for (const file of files) {
       const response = await page.goto(new URL('/' + file, origin).href, { waitUntil: 'domcontentloaded' });
       if (!response?.ok()) throw new Error(`Could not load HTML: ${file}`);
-      await page.addScriptTag({ path: axe });
+      if (file === 'index.html') await page.waitForURL(url => url.pathname === '/bio.html');
+      await page.waitForFunction(() => Boolean(window.axe));
       const result = await page.evaluate(tags => window.axe.run({
         runOnly: { type: 'tag', values: tags },
       }), tags);
