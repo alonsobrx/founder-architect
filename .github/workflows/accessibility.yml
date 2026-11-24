@@ -1,0 +1,40 @@
+name: Portfolio accessibility
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: portfolio-accessibility-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  accessibility:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: '24'
+      - name: Install browser test tools
+        run: |
+          npm install --no-save --no-package-lock axe-core@4.12.1 playwright@1.65.1
+          npx --no-install playwright install --with-deps chromium
+      - name: Audit public pages in Chromium
+        run: |
+          set -euo pipefail
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/portfolio-server.log 2>&1 &
+          trap 'kill $!' EXIT
+          curl -fsS --retry 8 --retry-delay 1 --retry-connrefused --output /dev/null http://127.0.0.1:4173/
+          node .github/scripts/portfolio-a11y.cjs
+      - name: Upload accessibility results
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: portfolio-accessibility
+          path: portfolio-axe.json
+          if-no-files-found: error
