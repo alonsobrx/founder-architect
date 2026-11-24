@@ -255,6 +255,8 @@ main[id] { scroll-margin-top: calc(var(--offset) + 1rem); }
 .footer-in { max-width: 960px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: .5rem; align-items: center; }
 .footer-in a { color: var(--g300); text-decoration: none; }
 .footer-in a:hover { color: var(--white); }
+.site-footer :is(.footer-link, .footer-src-link) { color: var(--g300); }
+.sidebar-link { display: inline-flex; align-items: center; gap: .25rem; min-block-size: 44px; padding-inline: .25rem; }
 
 /* ══ DARK MODE ══ */
 body.dark { --g500: #aaa; background: #0a0a0a; color: var(--white); }

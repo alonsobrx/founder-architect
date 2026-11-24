@@ -19,6 +19,20 @@ async function audit() {
       if (!response?.ok()) throw new Error(`Could not load HTML: ${file}`);
       if (file === 'index.html') await page.waitForURL(url => url.pathname === '/bio.html');
       await page.waitForFunction(() => Boolean(window.axe));
+      const skipLink = page.locator('a.skip-link').first();
+      if (await skipLink.count()) {
+        const destination = await skipLink.getAttribute('href');
+        await page.keyboard.press('Tab');
+        if (await skipLink.evaluate(link => document.activeElement !== link)) {
+          throw new Error(`Skip link is not the first keyboard stop: ${file}`);
+        }
+        await page.keyboard.press('Enter');
+        await page.waitForURL(url => url.hash === destination);
+        if (!await page.locator(`main${destination}`).count()) {
+          throw new Error(`Skip link does not target the main landmark: ${file}`);
+        }
+        await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }));
+      }
       const result = await page.evaluate(tags => window.axe.run({
         runOnly: { type: 'tag', values: tags },
       }), tags);
