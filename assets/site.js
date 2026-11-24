@@ -32,16 +32,18 @@ const LANG = {
   }
 };
 
-let currentLang = localStorage.getItem('lang') || 'en';
+let currentLang = localStorage.getItem('lang') === 'es' ? 'es' : 'en';
 let darkMode = localStorage.getItem('dark') === 'true';
 
 function applyLang(lang) {
   currentLang = lang;
   localStorage.setItem('lang', lang);
-  document.documentElement.setAttribute('lang', lang);
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
-    if (LANG[lang][key] !== undefined) el.innerHTML = LANG[lang][key];
+    if (Object.hasOwn(LANG[lang], key)) {
+      el.textContent = LANG[lang][key];
+      el.lang = lang;
+    }
   });
 }
 
@@ -73,18 +75,11 @@ function readAloud() {
   if (speechSynthesis.speaking) { speechSynthesis.cancel(); return; }
   const main = document.querySelector('main') || document.body;
   const utt = new SpeechSynthesisUtterance(main.innerText);
-  utt.lang = currentLang === 'es' ? 'es-US' : 'en-US';
+  utt.lang = main.lang || document.documentElement.lang || 'en';
   speechSynthesis.speak(utt);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   applyLang(currentLang);
   applyDark(darkMode);
-  // Mark active nav link
-  const path = window.location.pathname;
-  document.querySelectorAll('.main-nav a').forEach(a => {
-    if (a.getAttribute('href') && path.includes(a.getAttribute('href').replace('../','').replace('.html',''))) {
-      a.classList.add('active');
-    }
-  });
 });
