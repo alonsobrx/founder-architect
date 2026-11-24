@@ -35,3 +35,18 @@ A public-interest analysis of a major Cameron County economic-development propos
 - [Founder-Architect website](https://alonsobrx.github.io/founder-architect/)
 - [Publications](https://alonsobrx.github.io/founder-architect/publications.html)
 - [LinkedIn](https://www.linkedin.com/in/alonsobrx)
+
+
+## Run and verify locally
+
+Serve the repository root with `python -m http.server 8000`. Open [the local portfolio](http://localhost:8000/) or [the local Observatory](http://localhost:8000/observatory/).
+
+Run these checks with Python 3.12 from the root of a complete Git clone.
+
+```sh
+python observatory/scripts/recalculate_metrics.py --check
+python observatory/scripts/validate_observatory.py
+python observatory/scripts/security_audit.py --repository-root . --history
+```
+
+For corrections and accessibility feedback, read the [contribution guide](observatory/CONTRIBUTING.md). See the [security policy](SECURITY.md) and [licensing notice](LICENSE).
