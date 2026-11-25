@@ -27,7 +27,7 @@
     <div class="footer-in">
       <span data-i18n="footer_copy">© 2026 Arnoldo Alonso · Brasidas Strategies</span>
       <span data-i18n="footer_license">Open Source · Public Interest</span>
-      <a href="https://t.me/alonsobrx" target="_blank" rel="noopener" data-i18n="footer_contact">Telegram @alonsobrx</a>
+      <a href="https://www.linkedin.com/in/alonsobrx" target="_blank" rel="noopener" data-i18n="footer_contact">Arnoldo Alonso on LinkedIn</a>
     </div>
   </footer>`;
 
