@@ -14,7 +14,7 @@ const LANG = {
     nav_contact: 'Contact',
     footer_copy: '© 2026 Arnoldo Alonso · Brasidas Strategies',
     footer_license: 'Open Source · Public Interest',
-    footer_contact: 'Telegram @alonsobrx',
+    footer_contact: 'Arnoldo Alonso on LinkedIn',
     lang_btn: 'ES →',
   },
   es: {
@@ -27,7 +27,7 @@ const LANG = {
     nav_contact: 'Contacto',
     footer_copy: '© 2026 Arnoldo Alonso · Brasidas Strategies',
     footer_license: 'Código Abierto · Interés Público',
-    footer_contact: 'Telegram @alonsobrx',
+    footer_contact: 'Arnoldo Alonso on LinkedIn',
     lang_btn: 'EN →',
   }
 };

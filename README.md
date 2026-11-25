@@ -12,15 +12,15 @@ I am the founder of Brasidas Strategies and the principal architect of Ayala. Pu
 
 A bilingual, accessible, reproducible analysis of VA claims workload, appeals, accredited representation, workforce capacity, and artificial-intelligence governance.
 
-- [Live English publication](https://alonsobrx.github.io/founder-architect/observatory/)
-- [Publicación en español](https://alonsobrx.github.io/founder-architect/observatory/es/)
+- [English publication source](observatory/index.html)
+- [Publicación en español](observatory/es/index.html)
 - [Source, data, methodology, and validation](observatory/)
 
 ### The People's Brief: Saronic Technologies and Port Alpha
 
 A public-interest analysis of a major Cameron County economic-development proposal, including mathematical assumptions, fiscal exposure, historical comparisons, and questions for public officials.
 
-- [Read the publication](https://alonsobrx.github.io/founder-architect/reports/saronic-port-alpha.html)
+- [Read the publication source](reports/saronic-port-alpha.html)
 
 ## Engineering and research standards
 
@@ -32,8 +32,6 @@ A public-interest analysis of a major Cameron County economic-development propos
 
 ## Public profile
 
-- [Founder-Architect website](https://alonsobrx.github.io/founder-architect/)
-- [Publications](https://alonsobrx.github.io/founder-architect/publications.html)
 - [LinkedIn](https://www.linkedin.com/in/alonsobrx)
 
 
